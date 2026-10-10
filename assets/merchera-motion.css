@@ -206,9 +206,41 @@ html {
 /* ==========================================================================
    4. STYLISH FLOATING STUDIO HEADER & PERMANENT STICKY BAR
    ========================================================================== */
-[class*="ai-announcement-bar-"][class*="__inner"] {
+[class*="ai-announcement-bar-"][class*="__inner"],
+.merchera-announcement-bar__inner {
   min-height: 36px !important;
-  padding: 6px 40px !important;
+  padding: 6px 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.merchera-announcement-bar {
+  display: block !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 9999 !important;
+}
+
+.merchera-announcement-bar__message {
+  margin: 0 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.4 !important;
+}
+
+.merchera-announcement-bar__link {
+  color: #f5eee5 !important;
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  margin-left: 8px !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.merchera-announcement-bar__link:hover {
+  opacity: 0.85 !important;
 }
 
 header.header-v3 {

@@ -1,0 +1,73 @@
+{%- if section.settings.show_announcement -%}
+  <aside
+    class="merchera-announcement-bar"
+    style="background: {{ section.settings.background_color }}; color: {{ section.settings.text_color }}; border-bottom: 1px solid {{ section.settings.border_color }};"
+    aria-label="Announcement"
+  >
+    <div class="merchera-announcement-bar__inner">
+      <p class="merchera-announcement-bar__message">
+        {{ section.settings.message }}
+        {%- if section.settings.link_text != blank and section.settings.link_url != blank -%}
+          <a href="{{ section.settings.link_url }}" class="merchera-announcement-bar__link">
+            {{ section.settings.link_text }}
+          </a>
+        {%- endif -%}
+      </p>
+    </div>
+  </aside>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "class": "section-announcement-bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_announcement",
+      "label": "Show announcement",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "message",
+      "label": "Message",
+      "default": "✦ Free tracked UK delivery on orders over £60 — Studio-grade custom print & embroidery"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link text",
+      "default": "Shop now →"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#641f1f"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#fffdf9"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#d5c6b7"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement bar"
+    }
+  ]
+}
+{% endschema %}
