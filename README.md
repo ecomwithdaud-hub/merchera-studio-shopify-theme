@@ -74,6 +74,8 @@ merchera-studio-shopify-theme/
 │   └── password.liquid      # Password protection layout
 ├── locales/                 # Internationalization dictionary files (en.default.json, etc.)
 ├── sections/                # Modular Shopify 2.0 sections
+│   ├── announcement-bar.liquid # Studio announcement ribbon
+│   ├── _blocks.liquid       # Dynamic theme & app block wrapper
 │   ├── header-v1.liquid     # Studio header
 │   ├── footer-v2.liquid     # Streamlined footer
 │   ├── merchera-craft-showcase.liquid  # Interactive fabric and craft tabs
