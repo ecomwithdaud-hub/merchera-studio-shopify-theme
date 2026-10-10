@@ -1,0 +1,252 @@
+{
+  "sections": {
+    "slideshow_v1_RzyyMB": {
+      "type": "slideshow-v1",
+      "blocks": {
+        "slideshow_6cgEXV": {
+          "type": "slideshow",
+          "settings": {
+            "subtitle": "",
+            "subtitle_font_size": 1.4,
+            "subtitle_font_weight": 600,
+            "subtitle_animation": "zoom-out",
+            "title": "SHIRTS AS UNIQUE AS YOU ARE",
+            "title_font_size": 5,
+            "title_font_weight": 700,
+            "title_animation": "zoom-out",
+            "description": "Welcome To The Largest Online T-Shirt Platform In The World",
+            "description_font_size": 2,
+            "description_font_weight": 400,
+            "description_animation": "zoom-out",
+            "button_text": "shop now",
+            "button_link": "shopify://collections/all",
+            "button_mode": "accent",
+            "button_style": "primary",
+            "button_size": "sm",
+            "button_radius": 0.8,
+            "button_padding": 1.4,
+            "button_animation": "zoom-out",
+            "color_scheme": "inverse",
+            "background_type": "image",
+            "background_color": "",
+            "background_gradient": "",
+            "background_image_desktop": "shopify://shop_images/01_1_a818874c-791e-438d-8c72-288b635e79e5.jpg",
+            "background_image_mobile": "shopify://shop_images/01_1_a818874c-791e-438d-8c72-288b635e79e5.jpg",
+            "use_parallax": false,
+            "background_image_animation": "zoom-out",
+            "background_video_url": "",
+            "background_video_animation": "none",
+            "background_overlay": "",
+            "background_margin": 0
+          }
+        },
+        "slideshow_K8pDP9": {
+          "type": "slideshow",
+          "settings": {
+            "subtitle": "",
+            "subtitle_font_size": 1.4,
+            "subtitle_font_weight": 600,
+            "subtitle_animation": "zoom-out",
+            "title": "SHIRTS AS UNIQUE AS YOU ARE",
+            "title_font_size": 5,
+            "title_font_weight": 700,
+            "title_animation": "zoom-out",
+            "description": "Welcome To The Largest Online T-Shirt Platform In The World",
+            "description_font_size": 2,
+            "description_font_weight": 400,
+            "description_animation": "zoom-out",
+            "button_text": "shop now",
+            "button_link": "shopify://collections/all",
+            "button_mode": "accent",
+            "button_style": "primary",
+            "button_size": "sm",
+            "button_radius": 0.8,
+            "button_padding": 1.4,
+            "button_animation": "zoom-out",
+            "color_scheme": "inverse",
+            "background_type": "image",
+            "background_color": "",
+            "background_gradient": "",
+            "background_image_desktop": "shopify://shop_images/p2.jpg",
+            "background_image_mobile": "shopify://shop_images/p2.jpg",
+            "use_parallax": false,
+            "background_image_animation": "zoom-out",
+            "background_video_url": "",
+            "background_video_animation": "none",
+            "background_overlay": "",
+            "background_margin": 0
+          }
+        }
+      },
+      "block_order": ["slideshow_6cgEXV", "slideshow_K8pDP9"],
+      "name": "SLIDESHOW V1",
+      "settings": {
+        "width": "box",
+        "fullwidth_margin": 0,
+        "section_height_desktop": 760,
+        "section_height_mobile": 500,
+        "carousel_type": "none",
+        "changing_speed": 400,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_navigation": true,
+        "show_pagination": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "product_v2_9MrNyr": {
+      "type": "product-v2",
+      "name": "PRODUCT V2",
+      "settings": {
+        "width": "box",
+        "fullwidth_margin": 0,
+        "heading_title": "new arrivals",
+        "heading_align": "center",
+        "collection": "best-seller",
+        "limit": 12,
+        "columns_size": 4,
+        "distinct_color_scheme": false,
+        "product_card_color_scheme": "",
+        "color_scheme": "",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "use_parallax": true,
+        "background_image_animation": "none",
+        "background_video_url": "",
+        "background_video_animation": "none",
+        "background_overlay": "",
+        "background_margin": 0,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "product_v1_LYMiec": {
+      "type": "product-v1",
+      "name": "PRODUCT V1",
+      "settings": {
+        "width": "box",
+        "fullwidth_margin": 0,
+        "subtitle": "",
+        "title": "  Best Seller",
+        "collection": "list-view",
+        "limit": 12,
+        "columns_size": 4,
+        "distinct_color_scheme": false,
+        "product_card_color_scheme": "",
+        "color_scheme": "",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "use_parallax": true,
+        "background_image_animation": "none",
+        "background_video_url": "",
+        "background_video_animation": "none",
+        "background_overlay": "",
+        "background_margin": 0,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "collection_v33_YTJgJc": {
+      "type": "collection-v1",
+      "blocks": {
+        "collection_qKpMc3": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/bl1.jpg",
+            "collection": "box-container"
+          }
+        },
+        "collection_MmU4UB": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/bl4.jpg",
+            "collection": "product-card-style-03"
+          }
+        },
+        "collection_dRWXTk": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/bl7.jpg",
+            "collection": "product-card-style-04"
+          }
+        },
+        "collection_MG4pfa": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/bl10.jpg",
+            "collection": "collection-title-style-01"
+          }
+        },
+        "collection_yA8crt": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/bl2.jpg",
+            "collection": "product-card-style-05"
+          }
+        },
+        "collection_fUUDjp": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/bl5.jpg",
+            "collection": "collection-title-style-02"
+          }
+        },
+        "collection_BELmzQ": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/bl8.jpg",
+            "collection": "collection-title-style-04"
+          }
+        },
+        "collection_WTRthN": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/bl11.jpg",
+            "collection": "product-card-style-08"
+          }
+        }
+      },
+      "block_order": [
+        "collection_qKpMc3",
+        "collection_MmU4UB",
+        "collection_dRWXTk",
+        "collection_MG4pfa",
+        "collection_yA8crt",
+        "collection_fUUDjp",
+        "collection_BELmzQ",
+        "collection_WTRthN"
+      ],
+      "name": "COLLECTION V33",
+      "settings": {
+        "width": "box",
+        "fullwidth_margin": 0,
+        "columns_limit": 4,
+        "gap": 30,
+        "hover": "scale_up",
+        "aspect_ratio": "3/1.5",
+        "button_text": "",
+        "button_mode": "light",
+        "button_style": "secondary",
+        "button_size": "sm",
+        "button_radius": 0.8,
+        "button_padding": 1.4,
+        "color_scheme": "",
+        "background_type": "color",
+        "background_color": "#f5f7f7",
+        "background_gradient": "",
+        "use_parallax": true,
+        "background_image_animation": "none",
+        "background_video_url": "",
+        "background_video_animation": "none",
+        "background_overlay": "",
+        "background_margin": 0,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    }
+  },
+  "order": ["slideshow_v1_RzyyMB", "product_v2_9MrNyr", "product_v1_LYMiec", "collection_v33_YTJgJc"]
+}

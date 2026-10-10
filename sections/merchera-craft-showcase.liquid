@@ -1,0 +1,628 @@
+<style>
+  .mc-craft-section-{{ section.id }} {
+    position: relative;
+    padding: 96px 20px;
+    background: linear-gradient(180deg, #f5eee5 0%, #fffdf9 100%);
+    border-top: 1px solid #d5c6b7;
+    overflow: hidden;
+  }
+
+  .mc-craft-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .mc-craft-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 60px;
+  }
+
+  .mc-craft-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: rgba(100, 31, 31, 0.09);
+    border: 1px solid rgba(100, 31, 31, 0.22);
+    color: #641f1f;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .mc-craft-title {
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 700;
+    color: #211b18;
+    margin: 0 0 14px;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+  }
+
+  .mc-craft-subtitle {
+    font-size: 16px;
+    line-height: 1.65;
+    color: rgba(33, 27, 24, 0.72);
+    margin: 0;
+  }
+
+  .mc-craft-bento {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 28px;
+    align-items: stretch;
+  }
+
+  /* Left Spotlight Card: Interactive Technique Tabs */
+  .mc-craft-spotlight {
+    background: #211b18;
+    color: #fffdf9;
+    border-radius: 28px;
+    padding: 44px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 26px 56px -14px rgba(33, 27, 24, 0.35);
+    border: 1px solid rgba(213, 198, 183, 0.22);
+  }
+
+  .mc-craft-spotlight::before {
+    content: "";
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(100, 31, 31, 0.55) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .mc-craft-badge-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .mc-craft-studio-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(255, 253, 249, 0.1);
+    border: 1px solid rgba(255, 253, 249, 0.2);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #f5eee5;
+  }
+
+  .mc-craft-pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e57373;
+    box-shadow: 0 0 0 0 rgba(229, 115, 115, 0.7);
+    animation: mcPulseDot 2s infinite;
+  }
+
+  @keyframes mcPulseDot {
+    0% { box-shadow: 0 0 0 0 rgba(229, 115, 115, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(229, 115, 115, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(229, 115, 115, 0); }
+  }
+
+  .mc-craft-spotlight h3 {
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 700;
+    color: #fffdf9;
+    margin: 0 0 14px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    position: relative;
+    z-index: 1;
+  }
+
+  .mc-craft-spotlight p {
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: rgba(245, 238, 229, 0.8);
+    margin: 0 0 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Animated Spec Meters */
+  .mc-spec-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 36px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .mc-spec-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mc-spec-top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 600;
+    color: #f5eee5;
+    letter-spacing: 0.04em;
+  }
+
+  .mc-spec-track {
+    width: 100%;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(255, 253, 249, 0.12);
+    overflow: hidden;
+  }
+
+  .mc-spec-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #872d2d, #d8c7b5);
+    width: var(--spec-width, 95%);
+    animation: mcSpecGrow 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform-origin: left;
+  }
+
+  @keyframes mcSpecGrow {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  /* Technique Switcher Tabs */
+  .mc-craft-tabs {
+    display: inline-flex;
+    background: rgba(255, 253, 249, 0.08);
+    border: 1px solid rgba(255, 253, 249, 0.16);
+    border-radius: 999px;
+    padding: 4px;
+    gap: 4px;
+    margin-bottom: 26px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .mc-craft-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: rgba(245, 238, 229, 0.7);
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .mc-craft-tab:hover {
+    color: #fffdf9;
+    background: rgba(255, 253, 249, 0.08);
+  }
+
+  .mc-craft-tab.is-active {
+    background: #641f1f;
+    color: #fffdf9;
+    border-color: rgba(255, 253, 249, 0.28);
+    box-shadow: 0 4px 14px -2px rgba(100, 31, 31, 0.6);
+  }
+
+  .mc-craft-tab .mc-tab-dot {
+    font-size: 10px;
+    color: #d8c7b5;
+    transition: transform 0.3s ease;
+  }
+
+  .mc-craft-tab.is-active .mc-tab-dot {
+    color: #fffdf9;
+    transform: rotate(90deg) scale(1.15);
+  }
+
+  .mc-technique-panel {
+    display: none;
+    animation: mcPanelFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .mc-technique-panel.is-active {
+    display: block;
+  }
+
+  @keyframes mcPanelFade {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .mc-craft-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .mc-craft-pill {
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: rgba(255, 253, 249, 0.08);
+    border: 1px solid rgba(255, 253, 249, 0.16);
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #fffdf9;
+    transition: background 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .mc-craft-pill:hover {
+    background: #641f1f;
+    border-color: #f5eee5;
+    transform: translateY(-2px);
+  }
+
+  /* Right Column: 3 Stacked Interactive Craft Cards */
+  .mc-craft-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mc-craft-card {
+    flex: 1;
+    background: #fffdf9;
+    border: 1px solid #d5c6b7;
+    border-radius: 22px;
+    padding: 26px 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    box-shadow: 0 12px 30px -12px rgba(33, 27, 24, 0.07);
+    transition:
+      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.35s ease;
+  }
+
+  .mc-craft-card:hover {
+    border-color: #641f1f;
+    box-shadow: 0 22px 44px -12px rgba(100, 31, 31, 0.18);
+  }
+
+  .mc-craft-card__icon {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: #f5eee5;
+    border: 1px solid #d5c6b7;
+    color: #641f1f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.35s ease, color 0.35s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .mc-craft-card:hover .mc-craft-card__icon {
+    background: #641f1f;
+    color: #fffdf9;
+    border-color: #641f1f;
+    transform: rotate(-6deg) scale(1.08);
+  }
+
+  .mc-craft-card__body h4 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #211b18;
+    margin: 0 0 6px;
+  }
+
+  .mc-craft-card__body p {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: rgba(33, 27, 24, 0.72);
+    margin: 0 0 10px;
+  }
+
+  .mc-craft-card__meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #641f1f;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  @media screen and (max-width: 991px) {
+    .mc-craft-bento {
+      grid-template-columns: 1fr;
+    }
+    .mc-craft-section-{{ section.id }} {
+      padding: 68px 20px;
+    }
+  }
+</style>
+
+<section class="mc-craft-section-{{ section.id }}">
+  <div class="mc-craft-container">
+    <div class="mc-craft-header" data-mc-reveal="fade-up">
+      <div class="mc-craft-eyebrow">
+        <span>✦</span>
+        <span>THE ANATOMY OF MERCHERA CRAFT</span>
+      </div>
+      <h2 class="mc-craft-title">Built Like a Luxury Fashion Label</h2>
+      <p class="mc-craft-subtitle">
+        We reject thin promotional blanks and peeling transfers. Every custom garment, cap, tote, and print card is engineered for heavyweight drape and lasting studio vibrancy.
+      </p>
+    </div>
+
+    <div class="mc-craft-bento">
+      <!-- Left Spotlight Bento: Interactive Technique Switcher -->
+      <div class="mc-craft-spotlight" data-mc-tilt data-mc-reveal="slide-left">
+        <div>
+          <!-- Switcher Pills -->
+          <div class="mc-craft-tabs" role="tablist" aria-label="Craft Technique Switcher">
+            <button
+              type="button"
+              class="mc-craft-tab is-active"
+              data-technique="embroidery"
+              role="tab"
+              aria-selected="true"
+            >
+              <span class="mc-tab-dot">✦</span>
+              <span>3D Satin Embroidery</span>
+            </button>
+            <button
+              type="button"
+              class="mc-craft-tab"
+              data-technique="print"
+              role="tab"
+              aria-selected="false"
+            >
+              <span class="mc-tab-dot">✦</span>
+              <span>HD Studio Ink Print</span>
+            </button>
+          </div>
+
+          <!-- Panel 1: 3D Satin Embroidery -->
+          <div class="mc-technique-panel is-active" data-panel="embroidery">
+            <div class="mc-craft-badge-row">
+              <span class="mc-craft-studio-tag">
+                <span class="mc-craft-pulse-dot"></span>
+                <span>MADEIRA RAYON • MULTI-HEAD PRECISION</span>
+              </span>
+              <span style="font-size: 12px; color: #d8c7b5; font-weight: 600;">3D FOAM RELIEF</span>
+            </div>
+            <h3>Architectural 3D Satin & Relief Stitch</h3>
+            <p>
+              Dense Madeira rayon threads engineered with 1,200+ stitches per square inch. Creates tactile relief, luminous sheen, and permanent wash resistance on heavyweight hoodies, caps, and jackets.
+            </p>
+
+            <div class="mc-spec-bars">
+              <div class="mc-spec-item">
+                <div class="mc-spec-top">
+                  <span>Thread Density & Micro-Stitch Precision</span>
+                  <span>1,200+ Stitches/in²</span>
+                </div>
+                <div class="mc-spec-track">
+                  <div class="mc-spec-fill" style="--spec-width: 98%;"></div>
+                </div>
+              </div>
+              <div class="mc-spec-item">
+                <div class="mc-spec-top">
+                  <span>Tactile 3D Relief & Foam Elevation</span>
+                  <span>3.5mm Loft</span>
+                </div>
+                <div class="mc-spec-track">
+                  <div class="mc-spec-fill" style="--spec-width: 94%;"></div>
+                </div>
+              </div>
+              <div class="mc-spec-item">
+                <div class="mc-spec-top">
+                  <span>Commercial Wash Lifespan & Colourfastness</span>
+                  <span>100+ Washes</span>
+                </div>
+                <div class="mc-spec-track">
+                  <div class="mc-spec-fill" style="--spec-width: 99%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mc-craft-pills">
+              <span class="mc-craft-pill">✦ Madeira Lustre Threads</span>
+              <span class="mc-craft-pill">✦ Structured Caps & Hoodies</span>
+              <span class="mc-craft-pill">✦ Metallic & Matte Finishes</span>
+              <span class="mc-craft-pill">✦ 3D Foam Underlay</span>
+            </div>
+          </div>
+
+          <!-- Panel 2: HD Studio Ink Print -->
+          <div class="mc-technique-panel" data-panel="print">
+            <div class="mc-craft-badge-row">
+              <span class="mc-craft-studio-tag">
+                <span class="mc-craft-pulse-dot"></span>
+                <span>PRE-CURED PIGMENT • DTG & SCREEN</span>
+              </span>
+              <span style="font-size: 12px; color: #d8c7b5; font-weight: 600;">1200 DPI RESOLUTION</span>
+            </div>
+            <h3>Micro-Droplet High-Definition Screen & DTG</h3>
+            <p>
+              Ultra-fine pigment dispersion yielding microscopic gradient fidelity and zero-feel breathable hand. Pre-cured water-based inks that stretch with the fabric without cracking, peeling, or fading.
+            </p>
+
+            <div class="mc-spec-bars">
+              <div class="mc-spec-item">
+                <div class="mc-spec-top">
+                  <span>Print Resolution & Fine Art Gradient Detail</span>
+                  <span>1200 DPI Micro-Droplet</span>
+                </div>
+                <div class="mc-spec-track">
+                  <div class="mc-spec-fill" style="--spec-width: 99%;"></div>
+                </div>
+              </div>
+              <div class="mc-spec-item">
+                <div class="mc-spec-top">
+                  <span>Hand-Feel Softness & Fabric Breathability</span>
+                  <span>Zero-Hand Touch</span>
+                </div>
+                <div class="mc-spec-track">
+                  <div class="mc-spec-fill" style="--spec-width: 96%;"></div>
+                </div>
+              </div>
+              <div class="mc-spec-item">
+                <div class="mc-spec-top">
+                  <span>Colour Vibrancy Retention (Pre-Cured Inks)</span>
+                  <span>60+ Gentle Washes</span>
+                </div>
+                <div class="mc-spec-track">
+                  <div class="mc-spec-fill" style="--spec-width: 95%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mc-craft-pills">
+              <span class="mc-craft-pill">✦ Eco Water-Based Inks</span>
+              <span class="mc-craft-pill">✦ Photographic Gradients</span>
+              <span class="mc-craft-pill">✦ Large Chest & Back Areas</span>
+              <span class="mc-craft-pill">✦ Zero-Hand Softness</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Stacked Cards -->
+      <div class="mc-craft-stack">
+        <div class="mc-craft-card" data-mc-tilt data-mc-reveal="fade-up" style="--mc-delay: 80ms;">
+          <div class="mc-craft-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <div class="mc-craft-card__body">
+            <h4>Architectural Heavyweight Fabrics</h4>
+            <p>From structured drop-shoulder hoodies to breathable piqué polos and reinforced canvas totes that hold their silhouette.</p>
+            <span class="mc-craft-card__meta">✦ Zero Shrinkage • Soft-Touch Finish</span>
+          </div>
+        </div>
+
+        <div class="mc-craft-card" data-mc-tilt data-mc-reveal="fade-up" style="--mc-delay: 180ms;">
+          <div class="mc-craft-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/>
+              <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/>
+              <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>
+              <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/>
+              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
+            </svg>
+          </div>
+          <div class="mc-craft-card__body">
+            <h4>True-to-Pantone Colour Matching</h4>
+            <p>Vibrant, breathable inks and lustre threads that capture your exact brand palette across dark and light garments alike.</p>
+            <span class="mc-craft-card__meta">✦ High-Opacity Studio Pigments</span>
+          </div>
+        </div>
+
+        <div class="mc-craft-card" data-mc-tilt data-mc-reveal="fade-up" style="--mc-delay: 280ms;">
+          <div class="mc-craft-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="mc-craft-card__body">
+            <h4>Single Piece or Corporate Bulk Runs</h4>
+            <p>Order a single personalised hoodie or outfit an entire 500-person summit with tiered studio volume discounts.</p>
+            <span class="mc-craft-card__meta">✦ Dedicated UK Account Support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const section = document.querySelector('.mc-craft-section-{{ section.id }}');
+      if (!section) return;
+
+      const tabs = section.querySelectorAll('.mc-craft-tab');
+      const panels = section.querySelectorAll('.mc-technique-panel');
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const target = tab.getAttribute('data-technique');
+          if (!target) return;
+
+          tabs.forEach((t) => {
+            const isActive = t === tab;
+            t.classList.toggle('is-active', isActive);
+            t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          });
+
+          panels.forEach((p) => {
+            const isActive = p.getAttribute('data-panel') === target;
+            p.classList.toggle('is-active', isActive);
+
+            if (isActive) {
+              // Re-trigger spec fill animations
+              const fills = p.querySelectorAll('.mc-spec-fill');
+              fills.forEach((fill) => {
+                fill.style.animation = 'none';
+                fill.offsetHeight; // trigger reflow
+                fill.style.animation = '';
+              });
+            }
+          });
+        });
+      });
+    })();
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Merchera Craft Showcase",
+  "tag": "section",
+  "class": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Merchera Craft Showcase"
+    }
+  ]
+}
+{% endschema %}

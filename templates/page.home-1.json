@@ -1,0 +1,458 @@
+{
+  "sections": {
+    "slideshow_v1_RzyyMB": {
+      "type": "slideshow-v1",
+      "blocks": {
+        "slideshow_6cgEXV": {
+          "type": "slideshow",
+          "settings": {
+            "subtitle": "",
+            "subtitle_font_size": 1.4,
+            "subtitle_font_weight": 600,
+            "subtitle_animation": "zoom-out",
+            "title": "SHIRTS AS UNIQUE AS YOU ARE",
+            "title_font_size": 5,
+            "title_font_weight": 700,
+            "title_animation": "zoom-out",
+            "description": "Welcome To The Largest Online T-Shirt Platform In The World",
+            "description_font_size": 2,
+            "description_font_weight": 400,
+            "description_animation": "zoom-out",
+            "button_text": "shop now",
+            "button_link": "shopify://collections/all",
+            "button_mode": "accent",
+            "button_style": "primary",
+            "button_size": "sm",
+            "button_radius": 0.8,
+            "button_padding": 1.4,
+            "button_animation": "zoom-out",
+            "color_scheme": "inverse",
+            "background_type": "image",
+            "background_color": "",
+            "background_gradient": "",
+            "background_image_desktop": "shopify://shop_images/01_1_a818874c-791e-438d-8c72-288b635e79e5.jpg",
+            "background_image_mobile": "shopify://shop_images/01_1_a818874c-791e-438d-8c72-288b635e79e5.jpg",
+            "use_parallax": false,
+            "background_image_animation": "zoom-out",
+            "background_video_url": "",
+            "background_video_animation": "none",
+            "background_overlay": "",
+            "background_margin": 0
+          }
+        },
+        "slideshow_K8pDP9": {
+          "type": "slideshow",
+          "settings": {
+            "subtitle": "",
+            "subtitle_font_size": 1.4,
+            "subtitle_font_weight": 600,
+            "subtitle_animation": "zoom-out",
+            "title": "SHIRTS AS UNIQUE AS YOU ARE",
+            "title_font_size": 5,
+            "title_font_weight": 700,
+            "title_animation": "zoom-out",
+            "description": "Welcome To The Largest Online T-Shirt Platform In The World",
+            "description_font_size": 2,
+            "description_font_weight": 400,
+            "description_animation": "zoom-out",
+            "button_text": "shop now",
+            "button_link": "shopify://collections/all",
+            "button_mode": "accent",
+            "button_style": "primary",
+            "button_size": "sm",
+            "button_radius": 0.8,
+            "button_padding": 1.4,
+            "button_animation": "zoom-out",
+            "color_scheme": "inverse",
+            "background_type": "image",
+            "background_color": "",
+            "background_gradient": "",
+            "background_image_desktop": "shopify://shop_images/p2.jpg",
+            "background_image_mobile": "shopify://shop_images/p2.jpg",
+            "use_parallax": false,
+            "background_image_animation": "zoom-out",
+            "background_video_url": "",
+            "background_video_animation": "none",
+            "background_overlay": "",
+            "background_margin": 0
+          }
+        }
+      },
+      "block_order": ["slideshow_6cgEXV", "slideshow_K8pDP9"],
+      "settings": {
+        "width": "box",
+        "fullwidth_margin": 0,
+        "section_height_desktop": 760,
+        "section_height_mobile": 500,
+        "carousel_type": "fade",
+        "changing_speed": 1000,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_navigation": true,
+        "show_pagination": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "product_v2_rgD9Vf": {
+      "type": "product-v2",
+      "settings": {
+        "width": "wide",
+        "fullwidth_margin": 0,
+        "heading_title": "new arrivals",
+        "heading_align": "left",
+        "collection": "box-container",
+        "limit": 12,
+        "columns_size": 4,
+        "distinct_color_scheme": false,
+        "product_card_color_scheme": "",
+        "color_scheme": "",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "use_parallax": true,
+        "background_image_animation": "none",
+        "background_video_url": "",
+        "background_video_animation": "none",
+        "background_overlay": "",
+        "background_margin": 0,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "collection_v33_hWWCNt": {
+      "type": "collection-v1",
+      "blocks": {
+        "collection_FAFfaG": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/bl10.jpg",
+            "collection": "product-card-style-04"
+          }
+        },
+        "collection_ddgzUc": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/bl7.jpg",
+            "collection": "product-card-style-04"
+          }
+        },
+        "collection_TRpkCN": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/bl1.jpg",
+            "collection": "product-card-style-05"
+          }
+        },
+        "collection_PMmNyp": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/bl4.jpg",
+            "collection": "product-card-style-08"
+          }
+        }
+      },
+      "block_order": ["collection_FAFfaG", "collection_ddgzUc", "collection_TRpkCN", "collection_PMmNyp"],
+      "settings": {
+        "width": "wide",
+        "fullwidth_margin": 0,
+        "columns_limit": 4,
+        "gap": 30,
+        "hover": "scale_up",
+        "aspect_ratio": "3/1.5",
+        "button_text": "",
+        "button_mode": "light",
+        "button_style": "secondary",
+        "button_size": "sm",
+        "button_radius": 0.8,
+        "button_padding": 1.4,
+        "color_scheme": "",
+        "background_type": "color",
+        "background_color": "#f5f7f7",
+        "background_gradient": "",
+        "use_parallax": true,
+        "background_image_animation": "none",
+        "background_video_url": "",
+        "background_video_animation": "none",
+        "background_overlay": "",
+        "background_margin": 0,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "product_v1_fFBNta": {
+      "type": "product-v1",
+      "settings": {
+        "width": "box",
+        "fullwidth_margin": 0,
+        "subtitle": "",
+        "title": "Best Sellers",
+        "heading_align": "center",
+        "collection": "collection-title-style-01",
+        "limit": 18,
+        "columns_size": 6,
+        "distinct_color_scheme": false,
+        "product_card_color_scheme": "",
+        "color_scheme": "",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "use_parallax": true,
+        "background_image_animation": "none",
+        "background_video_url": "",
+        "background_video_animation": "none",
+        "background_overlay": "",
+        "background_margin": 0,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "collection_v33_Bhqewg": {
+      "type": "collection-v1",
+      "blocks": {
+        "collection_X97T4j": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/bl5.jpg",
+            "collection": "product-card-style-04"
+          }
+        },
+        "collection_rtCtBQ": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/bl2.jpg",
+            "collection": "product-card-style-04"
+          }
+        },
+        "collection_t67DdM": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/bl8.jpg",
+            "collection": "product-card-style-05"
+          }
+        },
+        "collection_mikG9K": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/bl11.jpg",
+            "collection": "product-card-style-08"
+          }
+        }
+      },
+      "block_order": ["collection_X97T4j", "collection_rtCtBQ", "collection_t67DdM", "collection_mikG9K"],
+      "settings": {
+        "width": "wide",
+        "fullwidth_margin": 0,
+        "columns_limit": 4,
+        "gap": 30,
+        "hover": "scale_up",
+        "aspect_ratio": "3/1.5",
+        "button_text": "",
+        "button_mode": "light",
+        "button_style": "secondary",
+        "button_size": "sm",
+        "button_radius": 0.8,
+        "button_padding": 1.4,
+        "color_scheme": "",
+        "background_type": "color",
+        "background_color": "#f5f7f7",
+        "background_gradient": "",
+        "use_parallax": true,
+        "background_image_animation": "none",
+        "background_video_url": "",
+        "background_video_animation": "none",
+        "background_overlay": "",
+        "background_margin": 0,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "product_v1_rz4LQD": {
+      "type": "product-v1",
+      "settings": {
+        "width": "box",
+        "fullwidth_margin": 0,
+        "subtitle": "",
+        "title": "Special For Christmas",
+        "heading_align": "center",
+        "collection": "grid-2-columns",
+        "limit": 18,
+        "columns_size": 6,
+        "distinct_color_scheme": false,
+        "product_card_color_scheme": "",
+        "color_scheme": "",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "use_parallax": true,
+        "background_image_animation": "none",
+        "background_video_url": "",
+        "background_video_animation": "none",
+        "background_overlay": "",
+        "background_margin": 0,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "collection_v33_9p8Mch": {
+      "type": "collection-v1",
+      "blocks": {
+        "collection_gcifRy": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/bl3.jpg",
+            "collection": "product-card-style-04"
+          }
+        },
+        "collection_qJ6TWC": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/bl6.jpg",
+            "collection": "product-card-style-04"
+          }
+        },
+        "collection_pz4E3f": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/bl9.jpg",
+            "collection": "product-card-style-05"
+          }
+        },
+        "collection_hQy3bm": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/bl12.jpg",
+            "collection": "product-card-style-08"
+          }
+        }
+      },
+      "block_order": ["collection_gcifRy", "collection_qJ6TWC", "collection_pz4E3f", "collection_hQy3bm"],
+      "settings": {
+        "width": "wide",
+        "fullwidth_margin": 0,
+        "columns_limit": 4,
+        "gap": 30,
+        "hover": "scale_up",
+        "aspect_ratio": "3/1.5",
+        "button_text": "",
+        "button_mode": "light",
+        "button_style": "secondary",
+        "button_size": "sm",
+        "button_radius": 0.8,
+        "button_padding": 1.4,
+        "color_scheme": "",
+        "background_type": "color",
+        "background_color": "#f5f7f7",
+        "background_gradient": "",
+        "use_parallax": true,
+        "background_image_animation": "none",
+        "background_video_url": "",
+        "background_video_animation": "none",
+        "background_overlay": "",
+        "background_margin": 0,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "banner_countdown_v3_9aK9dT": {
+      "type": "banner-countdown-v1",
+      "settings": {
+        "width": "box",
+        "fullwidth_margin": 0,
+        "subtitle": "Let our gorgeous T-shirt help you to have a meaningful trip!",
+        "title": "Time To Travel",
+        "countdown_time": "October 14, 2026",
+        "show_days": true,
+        "show_hours": true,
+        "show_minutes": true,
+        "show_seconds": true,
+        "button_text": "browser collection",
+        "button_link": "shopify://collections/all",
+        "button_mode": "accent",
+        "button_style": "primary",
+        "button_size": "sm",
+        "button_radius": 0.8,
+        "button_padding": 1.4,
+        "color_scheme": "inverse",
+        "background_type": "image",
+        "background_color": "",
+        "background_gradient": "",
+        "background_image_desktop": "shopify://shop_images/cta_countdown_bg_f8559861-5e61-4106-9ab4-baafcb9b5c29.jpg",
+        "background_image_mobile": "shopify://shop_images/cta_countdown_bg_f8559861-5e61-4106-9ab4-baafcb9b5c29.jpg",
+        "use_parallax": false,
+        "background_image_animation": "zoom-out",
+        "background_video_url": "",
+        "background_video_animation": "none",
+        "background_overlay": "",
+        "background_margin": 0,
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    },
+    "testimonial_v15_xKPnd9": {
+      "type": "testimonial-v2",
+      "blocks": {
+        "review_hMy4fy": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "testimonial": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+            "name_customer": "HGA",
+            "position": "Photographer"
+          }
+        },
+        "review_rD7rjy": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "testimonial": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or andomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum",
+            "name_customer": "Raymond Cruz",
+            "position": "Photographer"
+          }
+        },
+        "review_W3kqtN": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "testimonial": "But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted",
+            "name_customer": "Alice Cunningham",
+            "position": "Photographer"
+          }
+        }
+      },
+      "block_order": ["review_hMy4fy", "review_rD7rjy", "review_W3kqtN"],
+      "settings": {
+        "width": "box",
+        "fullwidth_margin": 0,
+        "reverse": true,
+        "auto_play": true,
+        "icon": "",
+        "title": "customer say",
+        "image": "shopify://shop_images/bg-customersay.jpg",
+        "color_scheme": "",
+        "background_type": "color",
+        "background_color": "#f5f7f7",
+        "background_gradient": "",
+        "use_parallax": true,
+        "background_image_animation": "none",
+        "background_video_url": "",
+        "background_video_animation": "none",
+        "background_overlay": "",
+        "background_margin": 0,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    }
+  },
+  "order": [
+    "slideshow_v1_RzyyMB",
+    "product_v2_rgD9Vf",
+    "collection_v33_hWWCNt",
+    "product_v1_fFBNta",
+    "collection_v33_Bhqewg",
+    "product_v1_rz4LQD",
+    "collection_v33_9p8Mch",
+    "banner_countdown_v3_9aK9dT",
+    "testimonial_v15_xKPnd9"
+  ]
+}

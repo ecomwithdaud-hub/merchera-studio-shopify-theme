@@ -1,0 +1,509 @@
+<style>
+  .mc-comm-section-{{ section.id }} {
+    position: relative;
+    padding: 96px 20px;
+    background: linear-gradient(180deg, #fffdf9 0%, #f5eee5 50%, #fffdf9 100%);
+    border-top: 1px solid #d5c6b7;
+    overflow: hidden;
+  }
+
+  .mc-comm-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .mc-comm-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 56px;
+  }
+
+  .mc-comm-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: rgba(100, 31, 31, 0.09);
+    border: 1px solid rgba(100, 31, 31, 0.22);
+    color: #641f1f;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .mc-comm-title {
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 700;
+    color: #211b18;
+    margin: 0 0 14px;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+  }
+
+  .mc-comm-subtitle {
+    font-size: 16px;
+    line-height: 1.65;
+    color: rgba(33, 27, 24, 0.72);
+    margin: 0;
+  }
+
+  /* Bento Grid */
+  .mc-comm-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .mc-comm-card {
+    background: #fffdf9;
+    border: 1px solid #d5c6b7;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 12px 30px -10px rgba(33, 27, 24, 0.08);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .mc-comm-card:hover {
+    border-color: #641f1f;
+    transform: translateY(-6px);
+    box-shadow: 0 24px 50px -14px rgba(100, 31, 31, 0.22);
+  }
+
+  /* Span configurations */
+  .mc-comm-card--featured-1 {
+    grid-column: span 7;
+  }
+
+  .mc-comm-card--featured-2 {
+    grid-column: span 5;
+  }
+
+  .mc-comm-card--standard {
+    grid-column: span 3;
+  }
+
+  .mc-comm-img-box {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #211b18;
+  }
+
+  .mc-comm-card--featured-1 .mc-comm-img-box {
+    aspect-ratio: 16 / 10;
+  }
+
+  .mc-comm-card--featured-2 .mc-comm-img-box {
+    aspect-ratio: 16 / 14;
+  }
+
+  .mc-comm-card--standard .mc-comm-img-box {
+    aspect-ratio: 1 / 1;
+  }
+
+  .mc-comm-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .mc-comm-card:hover .mc-comm-img {
+    transform: scale(1.06);
+  }
+
+  .mc-comm-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(33, 27, 24, 0.1) 0%, rgba(33, 27, 24, 0.65) 100%);
+    pointer-events: none;
+  }
+
+  .mc-comm-top-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(255, 253, 249, 0.9);
+    backdrop-filter: blur(8px);
+    font-size: 11px;
+    font-weight: 700;
+    color: #641f1f;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .mc-comm-location {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #fffdf9;
+    background: rgba(33, 27, 24, 0.65);
+    backdrop-filter: blur(8px);
+    padding: 5px 10px;
+    border-radius: 999px;
+  }
+
+  .mc-comm-hover-pill {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: #641f1f;
+    color: #fffdf9;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    box-shadow: 0 6px 16px rgba(100, 31, 31, 0.4);
+    transform: translateY(10px);
+    opacity: 0;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .mc-comm-card:hover .mc-comm-hover-pill {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .mc-comm-body {
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+  }
+
+  .mc-comm-creator {
+    font-size: 18px;
+    font-weight: 700;
+    color: #211b18;
+    margin: 0 0 6px;
+  }
+
+  .mc-comm-details {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: rgba(33, 27, 24, 0.72);
+    margin: 0 0 14px;
+  }
+
+  .mc-comm-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+  }
+
+  .mc-comm-tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #f5eee5;
+    border: 1px solid #d5c6b7;
+    color: #641f1f;
+  }
+
+  /* Bottom Community Banner */
+  .mc-comm-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: #211b18;
+    color: #fffdf9;
+    border-radius: 20px;
+    padding: 24px 32px;
+    border: 1px solid rgba(213, 198, 183, 0.3);
+  }
+
+  .mc-comm-footer__text {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .mc-comm-footer__icon {
+    font-size: 26px;
+  }
+
+  .mc-comm-footer__title {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 4px;
+  }
+
+  .mc-comm-footer__desc {
+    font-size: 13px;
+    color: rgba(245, 238, 229, 0.75);
+    margin: 0;
+  }
+
+  .mc-comm-footer__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 26px;
+    border-radius: 999px;
+    background: #641f1f;
+    color: #fffdf9 !important;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 8px 20px -4px rgba(100, 31, 31, 0.5);
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+
+  .mc-comm-footer__btn:hover {
+    background: #872d2d;
+    transform: translateY(-2px);
+  }
+
+  @media screen and (max-width: 991px) {
+    .mc-comm-card--featured-1,
+    .mc-comm-card--featured-2 {
+      grid-column: span 12;
+    }
+    .mc-comm-card--standard {
+      grid-column: span 6;
+    }
+    .mc-comm-section-{{ section.id }} {
+      padding: 68px 20px;
+    }
+  }
+
+  @media screen and (max-width: 580px) {
+    .mc-comm-card--standard {
+      grid-column: span 12;
+    }
+  }
+</style>
+
+<section class="mc-comm-section-{{ section.id }}">
+  <div class="mc-comm-container">
+    <div class="mc-comm-header" data-mc-reveal="fade-up">
+      <div class="mc-comm-eyebrow">
+        <span>✦</span>
+        <span>IN THE WILD & IN THE STUDIO</span>
+      </div>
+      <h2 class="mc-comm-title">#CraftedByMerchera Community Archive</h2>
+      <p class="mc-comm-subtitle">
+        From boutique London roasters and independent record labels to architectural studios — explore real custom garments crafted in our UK atelier.
+      </p>
+    </div>
+
+    <div class="mc-comm-grid">
+      <!-- Card 1 (Featured Large) -->
+      <a href="/collections/all" class="mc-comm-card mc-comm-card--featured-1" data-mc-tilt data-mc-reveal="fade-up">
+        <div class="mc-comm-img-box">
+          <img
+            src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1200&q=80"
+            alt="Kinfolk Coffee Roasters Heavyweight Hoodie"
+            class="mc-comm-img"
+            loading="lazy"
+            width="1200"
+            height="750"
+          >
+          <div class="mc-comm-overlay"></div>
+          <span class="mc-comm-top-badge">✦ Studio Feature</span>
+          <span class="mc-comm-location">Shoreditch, London</span>
+          <span class="mc-comm-hover-pill">Shop This Blank →</span>
+        </div>
+        <div class="mc-comm-body">
+          <h3 class="mc-comm-creator">Kinfolk Coffee Roasters</h3>
+          <p class="mc-comm-details">
+            Equipped their barista crew with custom heavyweight 450 GSM drop-shoulder fleece hoodies featuring precision 3D satin embroidery in antique cream thread.
+          </p>
+          <div class="mc-comm-tags">
+            <span class="mc-comm-tag">✦ 3D Satin Embroidery</span>
+            <span class="mc-comm-tag">✦ 450 GSM Fleece Blank</span>
+            <span class="mc-comm-tag">✦ 60-Piece Crew Run</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 2 (Featured Medium) -->
+      <a href="/collections/all" class="mc-comm-card mc-comm-card--featured-2" data-mc-tilt data-mc-reveal="fade-up" style="--mc-delay: 100ms;">
+        <div class="mc-comm-img-box">
+          <img
+            src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=900&q=80"
+            alt="Apex Movement Studio Heavy Oversized Tee"
+            class="mc-comm-img"
+            loading="lazy"
+            width="900"
+            height="780"
+          >
+          <div class="mc-comm-overlay"></div>
+          <span class="mc-comm-top-badge">✦ HD Screen Print</span>
+          <span class="mc-comm-location">Manchester, UK</span>
+          <span class="mc-comm-hover-pill">Shop This Blank →</span>
+        </div>
+        <div class="mc-comm-body">
+          <h3 class="mc-comm-creator">Apex Movement Studio</h3>
+          <p class="mc-comm-details">
+            Vintage-washed 240 GSM combed cotton tees printed with zero-hand breathable water inks for studio classes and seasonal pop-up drops.
+          </p>
+          <div class="mc-comm-tags">
+            <span class="mc-comm-tag">✦ High-Definition Ink</span>
+            <span class="mc-comm-tag">✦ Vintage Wash Blank</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 3 (Standard 1) -->
+      <a href="/collections/all" class="mc-comm-card mc-comm-card--standard" data-mc-tilt data-mc-reveal="fade-up" style="--mc-delay: 150ms;">
+        <div class="mc-comm-img-box">
+          <img
+            src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=700&q=80"
+            alt="Studio Neue Structured Corduroy Cap"
+            class="mc-comm-img"
+            loading="lazy"
+            width="700"
+            height="700"
+          >
+          <div class="mc-comm-overlay"></div>
+          <span class="mc-comm-top-badge">✦ Headwear</span>
+          <span class="mc-comm-location">London E1</span>
+          <span class="mc-comm-hover-pill">View Cap →</span>
+        </div>
+        <div class="mc-comm-body">
+          <h3 class="mc-comm-creator">Studio Neue Architecture</h3>
+          <p class="mc-comm-details">6-panel structured caps with tonal micro-monogram stitch.</p>
+          <div class="mc-comm-tags">
+            <span class="mc-comm-tag">✦ Micro-Stitch</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 4 (Standard 2) -->
+      <a href="/collections/all" class="mc-comm-card mc-comm-card--standard" data-mc-tilt data-mc-reveal="fade-up" style="--mc-delay: 200ms;">
+        <div class="mc-comm-img-box">
+          <img
+            src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80"
+            alt="Vault Sound & Media Crewneck"
+            class="mc-comm-img"
+            loading="lazy"
+            width="700"
+            height="700"
+          >
+          <div class="mc-comm-overlay"></div>
+          <span class="mc-comm-top-badge">✦ Studio Knit</span>
+          <span class="mc-comm-location">Bristol</span>
+          <span class="mc-comm-hover-pill">View Crew →</span>
+        </div>
+        <div class="mc-comm-body">
+          <h3 class="mc-comm-creator">Vault Sound & Media</h3>
+          <p class="mc-comm-details">Heavyweight French terry crewnecks with sleeve crests.</p>
+          <div class="mc-comm-tags">
+            <span class="mc-comm-tag">✦ Sleeve Placement</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 5 (Standard 3) -->
+      <a href="/collections/all" class="mc-comm-card mc-comm-card--standard" data-mc-tilt data-mc-reveal="fade-up" style="--mc-delay: 250ms;">
+        <div class="mc-comm-img-box">
+          <img
+            src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=700&q=80"
+            alt="Nomad Creative Canvas Tote"
+            class="mc-comm-img"
+            loading="lazy"
+            width="700"
+            height="700"
+          >
+          <div class="mc-comm-overlay"></div>
+          <span class="mc-comm-top-badge">✦ Canvas Tote</span>
+          <span class="mc-comm-location">Hackney</span>
+          <span class="mc-comm-hover-pill">View Tote →</span>
+        </div>
+        <div class="mc-comm-body">
+          <h3 class="mc-comm-creator">Nomad Creative Collective</h3>
+          <p class="mc-comm-details">Reinforced 16oz cotton canvas totes with double-pass ink.</p>
+          <div class="mc-comm-tags">
+            <span class="mc-comm-tag">✦ Heavyweight Canvas</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 6 (Standard 4) -->
+      <a href="/collections/all" class="mc-comm-card mc-comm-card--standard" data-mc-tilt data-mc-reveal="fade-up" style="--mc-delay: 300ms;">
+        <div class="mc-comm-img-box">
+          <img
+            src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=700&q=80"
+            alt="Heritage Craft Guild Polo"
+            class="mc-comm-img"
+            loading="lazy"
+            width="700"
+            height="700"
+          >
+          <div class="mc-comm-overlay"></div>
+          <span class="mc-comm-top-badge">✦ Luxury Polo</span>
+          <span class="mc-comm-location">Soho, London</span>
+          <span class="mc-comm-hover-pill">View Polo →</span>
+        </div>
+        <div class="mc-comm-body">
+          <h3 class="mc-comm-creator">Heritage Craft Guild</h3>
+          <p class="mc-comm-details">Organic piqué polo shirts with 1,200 stitches/in² studio crest.</p>
+          <div class="mc-comm-tags">
+            <span class="mc-comm-tag">✦ Organic Piqué</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Community Banner Footer -->
+    <div class="mc-comm-footer" data-mc-reveal="fade-up">
+      <div class="mc-comm-footer__text">
+        <span class="mc-comm-footer__icon">✦</span>
+        <div>
+          <h4 class="mc-comm-footer__title">Share Your Creation with the Atelier</h4>
+          <p class="mc-comm-footer__desc">
+            Tag <strong>@Merchera</strong> or <strong>#CraftedByMerchera</strong> on Instagram to be featured in the community gallery and receive 15% off your next studio batch.
+          </p>
+        </div>
+      </div>
+      <a href="/collections/all" class="mc-comm-footer__btn" data-mc-magnetic="0.2">
+        <span>Explore All Studio Blanks</span>
+        <span>→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Merchera Community",
+  "tag": "section",
+  "class": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Merchera Community"
+    }
+  ]
+}
+{% endschema %}

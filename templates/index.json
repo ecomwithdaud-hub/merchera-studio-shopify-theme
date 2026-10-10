@@ -1,0 +1,329 @@
+{
+  "sections": {
+    "slideshow_v1_RzyyMB": {
+      "type": "slideshow-v1",
+      "blocks": {
+        "slideshow_6cgEXV": {
+          "type": "slideshow",
+          "settings": {
+            "subtitle": "",
+            "subtitle_font_size": 1.4,
+            "subtitle_font_weight": 600,
+            "subtitle_animation": "zoom-out",
+            "title": "",
+            "title_font_size": 5,
+            "title_font_weight": 700,
+            "title_animation": "zoom-out",
+            "description": "",
+            "description_font_size": 2,
+            "description_font_weight": 400,
+            "description_animation": "zoom-out",
+            "button_text": "Customize Now",
+            "button_link": "shopify://collections",
+            "button_mode": "accent",
+            "button_style": "primary",
+            "button_size": "md",
+            "button_radius": 2.4,
+            "button_padding": 1.8,
+            "button_animation": "zoom-out",
+            "color_scheme": "inverse",
+            "background_type": "image",
+            "background_color": "",
+            "background_gradient": "",
+            "background_image_desktop": "shopify://shop_images/hero2.png",
+            "background_image_mobile": "shopify://shop_images/mobile_hero_2.png",
+            "use_parallax": false,
+            "background_image_animation": "zoom-out",
+            "background_video_url": "",
+            "background_video_animation": "none",
+            "background_overlay": "",
+            "background_margin": 0
+          }
+        },
+        "slideshow_8JzRGV": {
+          "type": "slideshow",
+          "settings": {
+            "subtitle": "",
+            "subtitle_font_size": 1.4,
+            "subtitle_font_weight": 600,
+            "subtitle_animation": "none",
+            "title": "",
+            "title_font_size": 11,
+            "title_font_weight": 500,
+            "title_animation": "none",
+            "description": "",
+            "description_font_size": 1.6,
+            "description_font_weight": 400,
+            "description_animation": "none",
+            "button_text": "Explore All Products",
+            "button_link": "shopify://collections",
+            "button_mode": "accent",
+            "button_style": "primary",
+            "button_size": "md",
+            "button_radius": 2.4,
+            "button_padding": 1.8,
+            "button_animation": "none",
+            "color_scheme": "background-1",
+            "background_type": "image",
+            "background_color": "",
+            "background_gradient": "",
+            "background_image_desktop": "shopify://shop_images/48ec352d-59e2-44ab-bffa-8f21d3e0a804.jpg",
+            "background_image_mobile": "shopify://shop_images/b7ae545b-bacf-49e8-af04-d0d81e811bf7.jpg",
+            "use_parallax": false,
+            "background_image_animation": "none",
+            "background_video_url": "",
+            "background_video_animation": "none",
+            "background_overlay": "",
+            "background_margin": 0
+          }
+        }
+      },
+      "block_order": [
+        "slideshow_6cgEXV",
+        "slideshow_8JzRGV"
+      ],
+      "settings": {
+        "width": "box",
+        "fullwidth_margin": 0,
+        "section_height_desktop": 760,
+        "section_height_mobile": 500,
+        "carousel_type": "water",
+        "changing_speed": 1000,
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "show_navigation": true,
+        "show_pagination": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "merchera_marquee_top": {
+      "type": "merchera-marquee",
+      "blocks": {
+        "item_1": {
+          "type": "ticker_item",
+          "settings": {
+            "text": "Bespoke 3D Embroidery & HD Print",
+            "badge": "STUDIO GRADE"
+          }
+        },
+        "item_2": {
+          "type": "ticker_item",
+          "settings": {
+            "text": "Heavyweight Hoodies, Polos & Round-Bottom Tees",
+            "badge": "LUXURY BLANKS"
+          }
+        },
+        "item_3": {
+          "type": "ticker_item",
+          "settings": {
+            "text": "Custom Canvas Tote Bags, Caps & Business Cards",
+            "badge": "NO MINIMUMS"
+          }
+        },
+        "item_4": {
+          "type": "ticker_item",
+          "settings": {
+            "text": "Complimentary Tracked UK Delivery Over £60",
+            "badge": "48H DISPATCH"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ],
+      "settings": {
+        "bg_color": "#641f1f",
+        "text_color": "#fffdf9",
+        "speed": 30,
+        "padding_y": 16
+      }
+    },
+    "loved_moment_QzTRgt": {
+      "type": "loved-moment",
+      "blocks": {
+        "collection_card_j8DrJk": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "polo-shirts"
+          }
+        },
+        "collection_card_hVRBic": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "hoodies"
+          }
+        },
+        "collection_card_64aVBq": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "round-bottom-shirts"
+          }
+        },
+        "collection_card_HhQCC7": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "tote-bags"
+          }
+        },
+        "collection_card_TCgU7Y": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "caps"
+          }
+        },
+        "collection_card_NRtgh9": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "cards"
+          }
+        }
+      },
+      "block_order": [
+        "collection_card_j8DrJk",
+        "collection_card_hVRBic",
+        "collection_card_64aVBq",
+        "collection_card_HhQCC7",
+        "collection_card_TCgU7Y",
+        "collection_card_NRtgh9"
+      ],
+      "name": "Loved Moments Grid",
+      "settings": {
+        "eyebrow": "CURATED CUSTOM ESSENTIALS",
+        "heading": "Our Most-Loved Moments",
+        "subheading": "Crafted on heavyweight blanks with razor-sharp embroidery and high-definition studio print.",
+        "button_label": "Explore All Collections",
+        "button_link": "shopify://collections/all"
+      }
+    },
+    "merchera_process_flow": {
+      "type": "merchera-process",
+      "settings": {
+        "eyebrow": "THE MERCHERA STUDIO FLOW",
+        "heading": "From Concept to Custom Masterpiece",
+        "subheading": "Whether you are launching a streetwear label, outfitting your team, or crafting bespoke event merch, our 4-step studio process guarantees retail-grade perfection."
+      }
+    },
+    "banner_countdown_v3_9aK9dT": {
+      "type": "banner-countdown-v1",
+      "settings": {
+        "width": "box",
+        "fullwidth_margin": 0,
+        "subtitle": "Elevate your brand or wardrobe with our signature custom apparel & accessories — limited-time studio event.",
+        "title": "Seasonal Custom Studio Drop",
+        "countdown_time": "October 14, 2026",
+        "show_days": true,
+        "show_hours": true,
+        "show_minutes": true,
+        "show_seconds": true,
+        "button_text": "Browse Collection",
+        "button_link": "shopify://collections/all",
+        "button_mode": "accent",
+        "button_style": "primary",
+        "button_size": "md",
+        "button_radius": 2.4,
+        "button_padding": 1.8,
+        "color_scheme": "inverse",
+        "background_type": "image",
+        "background_color": "",
+        "background_gradient": "",
+        "background_image_desktop": "shopify://shop_images/9d365c05-29ac-4293-abcf-e0c8f21eb2e1_713110b3-ab7d-42e4-9918-734dcac70012.jpg",
+        "background_image_mobile": "shopify://shop_images/9d365c05-29ac-4293-abcf-e0c8f21eb2e1.jpg",
+        "use_parallax": true,
+        "background_image_animation": "zoom-out",
+        "background_video_url": "",
+        "background_video_animation": "none",
+        "background_overlay": "",
+        "background_margin": 0,
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    },
+    "testimonial_v1_p8Qcwk": {
+      "type": "testimonial-v1",
+      "blocks": {
+        "review_BeiCXk": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "testimonial": "Ordered custom drop-shoulder hoodies and staff tees for our annual summit. The print sharpness, vibrant colors, and fabric weight were top-tier. Our attendees loved the quality!",
+            "avatar": "shopify://shop_images/d8c075e8-1bff-4167-87e4-11b06ebfe967.jpg",
+            "name": "Sarah Jenkins",
+            "position": "Birmingham"
+          }
+        },
+        "review_nbYHYd": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "testimonial": "We needed custom embroidered caps and heavy canvas tote bags for our brand launch. The logo stitching detail is razor-sharp, and the material feels premium. They sold out in days.",
+            "avatar": "shopify://shop_images/7bcaae22-97d9-4e5f-afbf-93b73a3e11a1.jpg",
+            "name": "David Chen",
+            "position": "Belfast"
+          }
+        },
+        "review_iEPwzj": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "testimonial": "From custom business cards with unique finishes to tailored merchandise packages, the print precision and color accuracy are spot-on every single time. A reliable partner for all custom work.",
+            "avatar": "shopify://shop_images/fac60c21-1c38-4674-af62-7ff0457c0f27.jpg",
+            "name": "Maya Patel",
+            "position": "Swansea"
+          }
+        }
+      },
+      "block_order": [
+        "review_BeiCXk",
+        "review_nbYHYd",
+        "review_iEPwzj"
+      ],
+      "name": "t:sections.testimonial_v1.presets.name",
+      "settings": {
+        "width": "box",
+        "fullwidth_margin": 0,
+        "title": "Loved by Brands, Creators & Businesses",
+        "columns_carousel": 3,
+        "auto_play": true,
+        "color_scheme": "",
+        "background_type": "color",
+        "background_color": "#f5eee5",
+        "background_gradient": "",
+        "use_parallax": true,
+        "background_image_animation": "none",
+        "background_video_url": "",
+        "background_video_animation": "none",
+        "background_overlay": "",
+        "background_margin": 0,
+        "padding_top": 80,
+        "padding_bottom": 90
+      }
+    },
+    "merchera_craft_showcase": {
+      "type": "merchera-craft-showcase",
+      "settings": {}
+    },
+    "merchera_community": {
+      "type": "merchera-community",
+      "settings": {}
+    },
+    "merchera_faq_cta": {
+      "type": "merchera-faq-cta",
+      "settings": {}
+    }
+  },
+  "order": [
+    "slideshow_v1_RzyyMB",
+    "merchera_marquee_top",
+    "loved_moment_QzTRgt",
+    "merchera_craft_showcase",
+    "merchera_process_flow",
+    "banner_countdown_v3_9aK9dT",
+    "testimonial_v1_p8Qcwk",
+    "merchera_community",
+    "merchera_faq_cta"
+  ]
+}

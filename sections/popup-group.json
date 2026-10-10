@@ -1,0 +1,41 @@
+{
+  "name": "Popup Group",
+  "type": "custom.popups",
+  "sections": {
+    "popup-newsletter": {
+      "type": "popup-newsletter",
+      "disabled": true,
+      "settings": {}
+    },
+    "popup-promotion": {
+      "type": "popup-promotion",
+      "settings": {}
+    },
+    "popup-sale-notification": {
+      "type": "popup-sale-notification",
+      "settings": {
+        "color_scheme": "",
+        "content_width": 500,
+        "product_list": [
+          "custom-blue-pullover-hoodie",
+          "custom-canvas-shopping-tote-bag-3",
+          "custom-oversized-drop-shoulder-t-shirt-black",
+          "custom-printed-canvas-tote-bag-2",
+          "custom-standard-white-matte-business-cards"
+        ],
+        "customers_list": "Someone In Glasgow, just bought/\nSomeone In Swansea, just bought/\nSomeone In Bangor, just bought/\nSomeone In Birmingham, just bought/\nSomeone In Belfast, just bought/",
+        "position": "bottom-left",
+        "duration": 4,
+        "delay": 8,
+        "where_to_show": "all_pages",
+        "target_pages": "",
+        "content": "Verify"
+      }
+    }
+  },
+  "order": [
+    "popup-newsletter",
+    "popup-promotion",
+    "popup-sale-notification"
+  ]
+}

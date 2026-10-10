@@ -1,0 +1,357 @@
+<style>
+  .mc-faq-section-{{ section.id }} {
+    position: relative;
+    padding: 96px 20px;
+    background: #fffdf9;
+    border-top: 1px solid #d5c6b7;
+    overflow: hidden;
+  }
+
+  .mc-faq-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .mc-faq-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 56px;
+  }
+
+  .mc-faq-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: #f5eee5;
+    border: 1px solid #d5c6b7;
+    color: #641f1f;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .mc-faq-title {
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 700;
+    color: #211b18;
+    margin: 0 0 14px;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+  }
+
+  .mc-faq-subtitle {
+    font-size: 16px;
+    line-height: 1.65;
+    color: rgba(33, 27, 24, 0.72);
+    margin: 0;
+  }
+
+  .mc-faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 64px;
+  }
+
+  @media screen and (max-width: 860px) {
+    .mc-faq-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .mc-faq-item {
+    background: #f5eee5;
+    border: 1px solid #d5c6b7;
+    border-radius: 20px;
+    padding: 26px 28px;
+    cursor: pointer;
+    transition:
+      background-color 0.35s ease,
+      border-color 0.35s ease,
+      box-shadow 0.35s ease,
+      transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .mc-faq-item:hover {
+    background: #fffdf9;
+    border-color: #641f1f;
+    box-shadow: 0 14px 32px -10px rgba(100, 31, 31, 0.14);
+    transform: translateY(-3px);
+  }
+
+  .mc-faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #211b18;
+    line-height: 1.35;
+  }
+
+  .mc-faq-toggle {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(100, 31, 31, 0.08);
+    color: #641f1f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.35s ease, color 0.35s ease;
+  }
+
+  .mc-faq-item.is-active .mc-faq-toggle {
+    transform: rotate(45deg);
+    background: #641f1f;
+    color: #fffdf9;
+  }
+
+  .mc-faq-answer {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, margin-top 0.35s ease;
+  }
+
+  .mc-faq-item.is-active .mc-faq-answer {
+    max-height: 320px;
+    opacity: 1;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed rgba(213, 198, 183, 0.9);
+  }
+
+  .mc-faq-answer p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: rgba(33, 27, 24, 0.76);
+    margin: 0;
+  }
+
+  /* Creator & Bulk Studio Banner */
+  .mc-bulk-banner {
+    position: relative;
+    background: linear-gradient(135deg, #211b18 0%, #381212 50%, #641f1f 100%);
+    color: #fffdf9;
+    border-radius: 28px;
+    padding: 56px 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    box-shadow: 0 28px 64px -14px rgba(33, 27, 24, 0.38);
+    border: 1px solid rgba(255, 253, 249, 0.2);
+    overflow: hidden;
+  }
+
+  .mc-bulk-banner::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 440px;
+    height: 440px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 253, 249, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .mc-bulk-info {
+    max-width: 660px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .mc-bulk-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(255, 253, 249, 0.12);
+    border: 1px solid rgba(255, 253, 249, 0.24);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #f5eee5;
+    margin-bottom: 16px;
+  }
+
+  .mc-bulk-title {
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 700;
+    color: #fffdf9;
+    margin: 0 0 12px;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+  }
+
+  .mc-bulk-desc {
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: rgba(245, 238, 229, 0.84);
+    margin: 0 0 20px;
+  }
+
+  .mc-bulk-checklist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #f5eee5;
+  }
+
+  .mc-bulk-checklist span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .mc-bulk-actions {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media screen and (max-width: 991px) {
+    .mc-bulk-banner {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 40px 28px;
+    }
+    .mc-bulk-actions {
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+</style>
+
+<section class="mc-faq-section-{{ section.id }}">
+  <div class="mc-faq-container">
+    <div class="mc-faq-header" data-mc-reveal="fade-up">
+      <div class="mc-faq-eyebrow">
+        <span>✦</span>
+        <span>CLEAR & TRANSPARENT STUDIO ANSWERS</span>
+      </div>
+      <h2 class="mc-faq-title">Frequently Asked Questions</h2>
+      <p class="mc-faq-subtitle">
+        Everything you need to know about customizing your apparel, embroidery specs, sample orders, and express tracked UK delivery.
+      </p>
+    </div>
+
+    <div class="mc-faq-grid">
+      <!-- FAQ 1 -->
+      <div class="mc-faq-item is-active" data-mc-reveal="fade-up" style="--mc-delay: 0ms;">
+        <div class="mc-faq-question">
+          <span>How do I submit my artwork or design?</span>
+          <span class="mc-faq-toggle">+</span>
+        </div>
+        <div class="mc-faq-answer">
+          <p>
+            You can upload your PNG, JPG, SVG, or vector artwork directly on any product page using our interactive Customization Box. You can choose placement (chest, breast, center, or sleeves) and provide custom stitch or print notes.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="mc-faq-item" data-mc-reveal="fade-up" style="--mc-delay: 80ms;">
+        <div class="mc-faq-question">
+          <span>Is there any minimum order quantity?</span>
+          <span class="mc-faq-toggle">+</span>
+        </div>
+        <div class="mc-faq-answer">
+          <p>
+            No! You can order just 1 single custom piece for yourself or order 500+ pieces for your brand, team, or event. We offer generous tiered volume discounts for bulk orders.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="mc-faq-item" data-mc-reveal="fade-up" style="--mc-delay: 160ms;">
+        <div class="mc-faq-question">
+          <span>How fast is production and delivery?</span>
+          <span class="mc-faq-toggle">+</span>
+        </div>
+        <div class="mc-faq-answer">
+          <p>
+            Standard custom pieces are produced and dispatched from our UK studio within 2–4 business days. Tracked UK delivery is complimentary on all orders over £60. Express rush production is also available.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="mc-faq-item" data-mc-reveal="fade-up" style="--mc-delay: 240ms;">
+        <div class="mc-faq-question">
+          <span>What is the difference between embroidery & print?</span>
+          <span class="mc-faq-toggle">+</span>
+        </div>
+        <div class="mc-faq-answer">
+          <p>
+            Embroidery uses high-density threads stitched directly into the fabric for a luxury 3D texture that never fades. HD printing uses eco-certified water-based inks that penetrate the fibres for ultra-detailed, colourful illustrations.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Creator & Bulk Studio Banner -->
+    <div class="mc-bulk-banner" data-mc-reveal="scale-up" style="--mc-delay: 120ms;">
+      <div class="mc-bulk-info">
+        <div class="mc-bulk-tag">
+          <span>✦</span>
+          <span>BESPOKE CORPORATE & BRAND LAUNCHES</span>
+        </div>
+        <h3 class="mc-bulk-title">Planning a Large Order or Brand Merch Run?</h3>
+        <p class="mc-bulk-desc">
+          Get exclusive studio pricing, free physical swatches, and dedicated 1-on-1 artwork proofing from our London production team.
+        </p>
+        <div class="mc-bulk-checklist">
+          <span>✓ Tiered Volume Pricing (10–1,000+ pcs)</span>
+          <span>✓ Custom Neck Labels & Packaging</span>
+          <span>✓ Fast UK Studio Turnaround</span>
+        </div>
+      </div>
+
+      <div class="mc-bulk-actions">
+        <a href="/collections/all" class="mc-btn-luxury" data-mc-magnetic="0.2">
+          <span>Start Customising</span>
+          <span class="mc-btn-luxury__arrow">→</span>
+        </a>
+        <a href="/pages/contact" class="mc-btn-luxury mc-btn-luxury--cream" data-mc-magnetic="0.2">
+          <span>Contact Studio</span>
+          <span class="mc-btn-luxury__arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Merchera FAQ & Bulk CTA",
+  "tag": "section",
+  "class": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Merchera FAQ & Bulk CTA"
+    }
+  ]
+}
+{% endschema %}

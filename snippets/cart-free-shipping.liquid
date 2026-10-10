@@ -1,0 +1,33 @@
+{% comment %}
+  Merchera Studio — Luxury Free Shipping Threshold Progress Meter (£60 Free Tracked UK Delivery)
+{% endcomment %}
+
+{% liquid
+  assign free_shipping_threshold = 6000
+  assign current_total = cart.total_price | default: 0
+  assign remaining_cents = free_shipping_threshold | minus: current_total
+  if remaining_cents < 0
+    assign remaining_cents = 0
+  endif
+  assign remaining_money = remaining_cents | money
+  assign progress_pct = current_total | times: 100.0 | divided_by: free_shipping_threshold
+  if progress_pct > 100
+    assign progress_pct = 100
+  endif
+%}
+
+<div class='mc-free-shipping-box' data-threshold='{{ free_shipping_threshold }}' data-current='{{ current_total }}'>
+  <div class='mc-free-shipping-header'>
+    <span class='mc-free-shipping-icon'>🚚</span>
+    <span class='mc-free-shipping-msg'>
+      {% if remaining_cents > 0 %}
+        Add <strong>{{ remaining_money }}</strong> more for <strong>Complimentary Tracked UK Delivery</strong>
+      {% else %}
+        🎉 <strong>Complimentary Tracked UK Delivery Unlocked!</strong>
+      {% endif %}
+    </span>
+  </div>
+  <div class='mc-free-shipping-track'>
+    <div class='mc-free-shipping-fill' style='width: {{ progress_pct }}%;'></div>
+  </div>
+</div>

@@ -1,0 +1,346 @@
+{
+  "sections": {
+    "breadcrumb-v1": {
+      "type": "breadcrumb-v1",
+      "settings": {
+        "width": "box",
+        "breadcrumb_align": "flex-start",
+        "breadcrumb_hide": false,
+        "breadcrumb_hide_mobile": true,
+        "breadcrumb_animation": "fade-down",
+        "color_scheme": "",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "use_parallax": true,
+        "background_image_animation": "none",
+        "background_video_url": "",
+        "background_video_animation": "none",
+        "background_overlay": "",
+        "background_margin": 0,
+        "padding_top": 15,
+        "padding_bottom": 15
+      }
+    },
+    "main-product": {
+      "type": "main-product",
+      "blocks": {
+        "b9220087-e178-48b9-a33a-095a4119abaf": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {
+            "padding_top": 0,
+            "padding_bottom": 0
+          }
+        },
+        "bedc5e2d-642d-4448-8569-c7fcfd527042": {
+          "type": "title",
+          "settings": {
+            "font_size": 2.4,
+            "padding_top": 0,
+            "padding_bottom": 0
+          }
+        },
+        "b1d95bc4-490b-4b8c-914a-89b1323d2a43": {
+          "type": "price",
+          "settings": {
+            "saving": true,
+            "type": "percentage",
+            "padding_top": 0,
+            "padding_bottom": 20
+          }
+        },
+        "b1d95bc4-490b-4b8c-914a-89b1323d2a41": {
+          "type": "countdown_time",
+          "settings": {
+            "countdown_title": "Sale ends in:",
+            "time": "October 14, 2026",
+            "padding_top": 0,
+            "padding_bottom": 20
+          }
+        },
+        "4dabf9d3-3372-4f5a-9edf-1e1f03527b1k": {
+          "type": "variants",
+          "settings": {
+            "variants_style": "boxed",
+            "variants_color_style": "boxed2",
+            "padding_top": 20,
+            "padding_bottom": 30
+          }
+        },
+        "4dabf9d3-3372-4f5a-9edf-1e1f03527b1b": {
+          "type": "description",
+          "settings": {
+            "padding_top": 0,
+            "padding_bottom": 30
+          }
+        },
+        "4dabf9d3-3372-4f5a-9edf-1e1f03527b1c": {
+          "type": "visitor",
+          "settings": {
+            "visitor_text": "people are viewing this right now",
+            "visitor_max": 500,
+            "visitor_min": 100,
+            "visitor_change": 10,
+            "padding_top": 0,
+            "padding_bottom": 30
+          }
+        },
+        "4dabf9d3-3372-4f5a-9edf-1e1f03527b1a": {
+          "type": "offer",
+          "settings": {
+            "offer_title": "Special Offer",
+            "offer_content1": "In Stock",
+            "offer_content2": "Free Delivery Available*",
+            "offer_content3": "Sale 30% Off Use Code: Deal30",
+            "offer_color": "#28af5b",
+            "padding_top": 0,
+            "padding_bottom": 30
+          }
+        },
+        "ae0ed4c8-948a-46c7-b292-5f2687b8c94h": {
+          "type": "countdown_stock",
+          "settings": {
+            "padding_top": 0,
+            "padding_bottom": 30
+          }
+        },
+        "addon_buttons_MGW7hE": {
+          "type": "addon_buttons",
+          "settings": {
+            "sizeguide": true,
+            "compare": true,
+            "ask": true,
+            "share": true,
+            "sizeguide_type": "page",
+            "sizeguide_page": "size-guide",
+            "sizeguide_content": "<h4>General Men’s Polo & Apparel Size Chart (Inches)</h4><ul><li><strong>Small (S):</strong> Chest 36\"–38\" | Length ~27\"</li><li><strong>Medium (M):</strong> Chest 39\"–41\" | Length ~28\"</li><li><strong>Large (L):</strong> Chest 42\"–44\" | Length ~29\"</li><li><strong>Extra Large (XL):</strong> Chest 45\"–47\" | Length ~30\"</li><li><strong>2XL (XXL):</strong> Chest 48\"–50\" | Length ~30.5\"–31\"</li></ul>",
+            "padding_top": 0,
+            "padding_bottom": 30
+          }
+        },
+        "liquid_B6MPgM": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div class=\"customization-box\" id=\"customization-box-{{ section.id }}\">\n\n  <h3 class=\"customization-title\">\n    Customization Details\n  </h3>\n\n  <p class=\"customization-description\">\n    Tell us exactly how you want your product customized.\n  </p>\n\n  <label class=\"customization-label\" for=\"custom-instructions-{{ section.id }}\">\n    Your Instructions<span class=\"required-star\">*</span>\n  </label>\n\n  <textarea\n    id=\"custom-instructions-{{ section.id }}\"\n    class=\"customization-textarea\"\n    placeholder=\"Write your customization requirements here…\"\n    rows=\"6\"\n  ></textarea>\n\n  <p class=\"customization-note\">\n    Please provide complete and accurate details so we can customize your product correctly.\n  </p>\n\n\n  <!-- IMAGE UPLOAD -->\n\n  <label class=\"customization-label image-label\">\n    Upload Your Design / Reference Image\n  </label>\n\n  <p class=\"upload-description\">\n    You can upload your logo, artwork, design, or any reference image.\n  </p>\n\n  <label\n    class=\"custom-upload-button\"\n    for=\"custom-image-{{ section.id }}\"\n  >\n    📎 Choose Image\n  </label>\n\n  <input\n    type=\"file\"\n    id=\"custom-image-{{ section.id }}\"\n    class=\"custom-image-input\"\n    accept=\"image/jpeg,image/png,image/webp\"\n  >\n\n\n  <!-- IMAGE PREVIEW -->\n\n  <div\n    class=\"image-preview-wrapper\"\n    id=\"image-preview-{{ section.id }}\"\n    style=\"display:none;\"\n  >\n\n    <img\n      id=\"image-preview-img-{{ section.id }}\"\n      class=\"image-preview\"\n      alt=\"Customization image preview\"\n    >\n\n    <button\n      type=\"button\"\n      class=\"remove-image-button\"\n      id=\"remove-image-{{ section.id }}\"\n    >\n      Remove image\n    </button>\n\n  </div>\n\n\n  <!-- DESIGN PLACEMENT -->\n\n  <div\n    class=\"design-placement-section\"\n    id=\"design-placement-section-{{ section.id }}\"\n  >\n\n    <label\n      class=\"customization-label\"\n      for=\"design-placement-{{ section.id }}\"\n    >\n      Design Placement<span class=\"required-star\">*</span>\n    </label>\n\n    <p class=\"placement-description\">\n      Where would you like your design to be placed?\n    </p>\n\n    <select\n      id=\"design-placement-{{ section.id }}\"\n      class=\"design-placement-select\"\n    >\n\n      <option value=\"\">\n        Select placement\n      </option>\n\n      <option value=\"chest\">\n        Chest\n      </option>\n\n      <option value=\"breast\">\n        Breast\n      </option>\n\n      <option value=\"center\">\n        Center\n      </option>\n\n      <option value=\"right-sleeve\">\n        Right Sleeve\n      </option>\n\n      <option value=\"left-sleeve\">\n        Left Sleeve\n      </option>\n\n    </select>\n\n  </div>\n\n\n  <!-- LIVE PRODUCT PREVIEW -->\n\n  <div\n    class=\"custom-product-preview\"\n    id=\"custom-product-preview-{{ section.id }}\"\n    style=\"display:none;\"\n  >\n\n    <div class=\"preview-heading\">\n\n      <h4>\n        Preview Your Customization\n      </h4>\n\n      <p>\n        See how your design may look on the product.\n      </p>\n\n    </div>\n\n\n    <div class=\"preview-product-area\">\n\n      <img\n        class=\"preview-product-image\"\n        id=\"preview-product-image-{{ section.id }}\"\n        src=\"{{ product.featured_image | image_url: width: 1200 }}\"\n        alt=\"{{ product.title }}\"\n      >\n\n      <img\n        class=\"preview-design-image\"\n        id=\"preview-design-image-{{ section.id }}\"\n        alt=\"Your uploaded design\"\n      >\n\n    </div>\n\n\n    <div class=\"preview-placement-text\">\n\n      Placement:\n      <strong id=\"preview-placement-name-{{ section.id }}\">\n        —\n      </strong>\n\n    </div>\n\n    <p class=\"preview-disclaimer\">\n      Preview is for placement guidance only. Final appearance may vary depending on product, design size, print method, and production.\n    </p>\n\n  </div>\n\n\n  <!-- ERRORS -->\n\n  <p\n    class=\"upload-error\"\n    id=\"upload-error-{{ section.id }}\"\n    style=\"display:none;\"\n  ></p>\n\n  <p\n    class=\"customization-error\"\n    id=\"customization-error-{{ section.id }}\"\n    style=\"display:none;\"\n  >\n    Please enter your customization details before adding this product to cart.\n  </p>\n\n</div>\n\n\n<style>\n\n/* =========================================\n   MAIN CUSTOMIZATION BOX\n========================================= */\n\n.customization-box {\n  margin: 22px 0;\n  padding: 0;\n}\n\n.customization-title {\n  margin: 0 0 8px;\n  font-size: 18px;\n  line-height: 1.3;\n}\n\n.customization-description {\n  margin: 0 0 18px;\n  font-size: 14px;\n  line-height: 1.5;\n}\n\n.customization-label {\n  display: block;\n  margin-bottom: 8px;\n  font-size: 14px;\n  font-weight: 600;\n}\n\n.required-star {\n  margin-left: 3px;\n}\n\n.customization-textarea {\n  display: block;\n  width: 100%;\n  min-height: 140px;\n  padding: 14px;\n  box-sizing: border-box;\n  resize: vertical;\n  font: inherit;\n  font-size: 14px;\n  border: 1px solid rgba(0,0,0,.2);\n  border-radius: 6px;\n  background: transparent;\n}\n\n.customization-textarea:focus {\n  outline: none;\n  border-color: currentColor;\n}\n\n.customization-note,\n.upload-description,\n.placement-description {\n  margin: 7px 0 18px;\n  font-size: 12px;\n  line-height: 1.5;\n  opacity: .7;\n}\n\n\n/* =========================================\n   IMAGE UPLOAD\n========================================= */\n\n.image-label {\n  margin-top: 20px;\n  margin-bottom: 5px;\n}\n\n.custom-upload-button {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  padding: 11px 18px;\n  border: 1px solid rgba(0,0,0,.25);\n  border-radius: 6px;\n  cursor: pointer;\n  font-size: 14px;\n  font-weight: 500;\n  transition: opacity .2s ease;\n}\n\n.custom-upload-button:hover {\n  opacity: .75;\n}\n\n.custom-image-input {\n  display: none;\n}\n\n.image-preview-wrapper {\n  margin-top: 14px;\n}\n\n.image-preview {\n  display: block;\n  max-width: 180px;\n  max-height: 180px;\n  border-radius: 6px;\n  border: 1px solid rgba(0,0,0,.15);\n  object-fit: contain;\n}\n\n.remove-image-button {\n  margin-top: 8px;\n  padding: 6px 10px;\n  border: 0;\n  background: transparent;\n  text-decoration: underline;\n  cursor: pointer;\n  font: inherit;\n  font-size: 12px;\n}\n\n\n/* =========================================\n   DESIGN PLACEMENT\n========================================= */\n\n.design-placement-section {\n  margin-top: 24px;\n}\n\n.design-placement-select {\n  width: 100%;\n  min-height: 48px;\n  padding: 12px 14px;\n  border: 1px solid rgba(0,0,0,.2);\n  border-radius: 6px;\n  background: transparent;\n  font: inherit;\n  font-size: 14px;\n  cursor: pointer;\n}\n\n.design-placement-select:focus {\n  outline: none;\n  border-color: currentColor;\n}\n\n\n/* =========================================\n   LIVE PRODUCT PREVIEW\n========================================= */\n\n.custom-product-preview {\n  margin-top: 28px;\n  padding: 18px;\n  border: 1px solid rgba(0,0,0,.12);\n  border-radius: 10px;\n  background: rgba(0,0,0,.02);\n}\n\n.preview-heading h4 {\n  margin: 0 0 5px;\n  font-size: 16px;\n  line-height: 1.4;\n}\n\n.preview-heading p {\n  margin: 0 0 18px;\n  font-size: 12px;\n  opacity: .7;\n}\n\n.preview-product-area {\n  position: relative;\n  width: 100%;\n  max-width: 520px;\n  margin: 0 auto;\n  overflow: hidden;\n}\n\n.preview-product-image {\n  display: block;\n  width: 100%;\n  height: auto;\n  object-fit: contain;\n}\n\n.preview-design-image {\n  position: absolute;\n  display: none;\n  width: 90px;\n  height: 90px;\n  object-fit: contain;\n  transform: translate(-50%, -50%);\n  pointer-events: none;\n}\n\n\n/* =========================================\n   PLACEMENT POSITIONS\n========================================= */\n\n/* Chest */\n\n.preview-product-area.placement-chest\n.preview-design-image {\n\n  display: block;\n\n  left: 46%;\n  top: 38%;\n\n  width: 80px;\n  height: 80px;\n}\n\n\n/* Breast */\n\n.preview-product-area.placement-breast\n.preview-design-image {\n\n  display: block;\n\n  left: 57%;\n  top: 40%;\n\n  width: 65px;\n  height: 65px;\n}\n\n\n/* Center */\n\n.preview-product-area.placement-center\n.preview-design-image {\n\n  display: block;\n\n  left: 50%;\n  top: 50%;\n\n  width: 130px;\n  height: 130px;\n}\n\n\n/* Right Sleeve */\n\n.preview-product-area.placement-right-sleeve\n.preview-design-image {\n\n  display: block;\n\n  left: 79%;\n  top: 39%;\n\n  width: 60px;\n  height: 60px;\n}\n\n\n/* Left Sleeve */\n\n.preview-product-area.placement-left-sleeve\n.preview-design-image {\n\n  display: block;\n\n  left: 21%;\n  top: 39%;\n\n  width: 60px;\n  height: 60px;\n}\n\n\n/* =========================================\n   PREVIEW TEXT\n========================================= */\n\n.preview-placement-text {\n  margin-top: 14px;\n  text-align: center;\n  font-size: 13px;\n}\n\n.preview-disclaimer {\n  margin: 10px 0 0;\n  font-size: 11px;\n  line-height: 1.5;\n  opacity: .6;\n  text-align: center;\n}\n\n\n/* =========================================\n   ERRORS\n========================================= */\n\n.upload-error,\n.customization-error {\n  margin-top: 8px;\n  font-size: 13px;\n  line-height: 1.4;\n  color: #c62828;\n}\n\n\n/* =========================================\n   MOBILE\n========================================= */\n\n@media screen and (max-width: 749px) {\n\n  .customization-box {\n    margin: 18px 0;\n  }\n\n  .customization-textarea {\n    min-height: 120px;\n  }\n\n  .custom-upload-button {\n    width: 100%;\n  }\n\n  .custom-product-preview {\n    padding: 14px;\n  }\n\n  .preview-design-image {\n    max-width: 100%;\n  }\n\n}\n\n</style>\n\n\n<script>\n\n(function() {\n\n  const box = document.getElementById(\n    'customization-box-{{ section.id }}'\n  );\n\n  if (!box) return;\n\n\n  /* =========================================\n     ELEMENTS\n  ========================================= */\n\n  const textarea =\n    box.querySelector('.customization-textarea');\n\n  const imageInput =\n    box.querySelector('.custom-image-input');\n\n  const previewWrapper =\n    box.querySelector('.image-preview-wrapper');\n\n  const previewImage =\n    box.querySelector('.image-preview');\n\n  const removeImageButton =\n    box.querySelector('.remove-image-button');\n\n  const uploadError =\n    box.querySelector('.upload-error');\n\n  const customizationError =\n    box.querySelector('.customization-error');\n\n  const placementSelect =\n    box.querySelector('.design-placement-select');\n\n  const productPreview =\n    box.querySelector('.custom-product-preview');\n\n  const previewArea =\n    box.querySelector('.preview-product-area');\n\n  const previewDesign =\n    box.querySelector('.preview-design-image');\n\n  const previewPlacementName =\n    box.querySelector('.preview-placement-text strong');\n\n\n  /* =========================================\n     PRODUCT FORM\n  ========================================= */\n\n  function getProductForm() {\n\n    return document.querySelector(\n      'form[action*=\"/cart/add\"]'\n    );\n\n  }\n\n\n  function getOrCreateProperty(\n    form,\n    propertyName\n  ) {\n\n    let input = form.querySelector(\n      'input[data-custom-property=\"' +\n      propertyName +\n      '\"]'\n    );\n\n    if (!input) {\n\n      input =\n        document.createElement('input');\n\n      input.type = 'hidden';\n\n      input.name =\n        'properties[' +\n        propertyName +\n        ']';\n\n      input.setAttribute(\n        'data-custom-property',\n        propertyName\n      );\n\n      form.appendChild(input);\n\n    }\n\n    return input;\n\n  }\n\n\n  /* =========================================\n     SETUP FORM\n  ========================================= */\n\n  function setupForm() {\n\n    const form = getProductForm();\n\n    if (!form) return;\n\n\n    form.setAttribute(\n      'enctype',\n      'multipart/form-data'\n    );\n\n\n    /* Customization Details */\n\n    const instructionsProperty =\n      getOrCreateProperty(\n        form,\n        'Customization Details'\n      );\n\n\n    /* Image */\n\n    const imageProperty =\n      getOrCreateProperty(\n        form,\n        'Customization Image'\n      );\n\n\n    /* Placement */\n\n    const placementProperty =\n      getOrCreateProperty(\n        form,\n        'Design Placement'\n      );\n\n\n    function syncText() {\n\n      instructionsProperty.value =\n        textarea.value.trim();\n\n    }\n\n\n    function syncPlacement() {\n\n      placementProperty.value =\n        placementSelect.value;\n\n    }\n\n\n    /* =========================================\n       MOVE FILE INPUT INTO PRODUCT FORM\n    ========================================= */\n\n    if (\n      imageInput.parentElement !== form\n    ) {\n\n      form.appendChild(imageInput);\n\n    }\n\n\n    imageInput.name =\n      'properties[Customization Image]';\n\n\n    /* =========================================\n       IMAGE UPLOAD\n    ========================================= */\n\n    imageInput.addEventListener(\n      'change',\n      function() {\n\n        uploadError.style.display =\n          'none';\n\n        const file =\n          imageInput.files[0];\n\n\n        if (!file) {\n\n          previewWrapper.style.display =\n            'none';\n\n          productPreview.style.display =\n            'none';\n\n          return;\n\n        }\n\n\n        /* Image validation */\n\n        if (!file.type.startsWith('image/')) {\n\n          uploadError.textContent =\n            'Please upload an image file.';\n\n          uploadError.style.display =\n            'block';\n\n          imageInput.value = '';\n\n          previewWrapper.style.display =\n            'none';\n\n          productPreview.style.display =\n            'none';\n\n          return;\n\n        }\n\n\n        /* 10 MB limit */\n\n        if (\n          file.size >\n          10 * 1024 * 1024\n        ) {\n\n          uploadError.textContent =\n            'Image must be smaller than 10 MB.';\n\n          uploadError.style.display =\n            'block';\n\n          imageInput.value = '';\n\n          previewWrapper.style.display =\n            'none';\n\n          productPreview.style.display =\n            'none';\n\n          return;\n\n        }\n\n\n        /* =====================================\n           CREATE IMAGE PREVIEW\n        ===================================== */\n\n        const reader =\n          new FileReader();\n\n\n        reader.onload =\n          function(event) {\n\n            const imageURL =\n              event.target.result;\n\n\n            /* Small preview */\n\n            previewImage.src =\n              imageURL;\n\n            previewWrapper.style.display =\n              'block';\n\n\n            /* Large product preview */\n\n            previewDesign.src =\n              imageURL;\n\n            productPreview.style.display =\n              'block';\n\n\n            updateProductPreview();\n\n          };\n\n\n        reader.readAsDataURL(file);\n\n      }\n    );\n\n\n    /* =========================================\n       REMOVE IMAGE\n    ========================================= */\n\n    removeImageButton.addEventListener(\n      'click',\n      function() {\n\n        imageInput.value = '';\n\n        previewImage.src = '';\n\n        previewDesign.src = '';\n\n        previewWrapper.style.display =\n          'none';\n\n        productPreview.style.display =\n          'none';\n\n        uploadError.style.display =\n          'none';\n\n      }\n    );\n\n\n    /* =========================================\n       TEXT INPUT\n    ========================================= */\n\n    textarea.addEventListener(\n      'input',\n      function() {\n\n        syncText();\n\n        if (\n          textarea.value.trim()\n        ) {\n\n          customizationError.style.display =\n            'none';\n\n        }\n\n      }\n    );\n\n\n    /* =========================================\n       PLACEMENT CHANGE\n    ========================================= */\n\n    placementSelect.addEventListener(\n      'change',\n      function() {\n\n        syncPlacement();\n\n        updateProductPreview();\n\n      }\n    );\n\n\n    /* =========================================\n       UPDATE LIVE PREVIEW\n    ========================================= */\n\n    function updateProductPreview() {\n\n      const placement =\n        placementSelect.value;\n\n\n      previewArea.classList.remove(\n        'placement-chest',\n        'placement-breast',\n        'placement-center',\n        'placement-right-sleeve',\n        'placement-left-sleeve'\n      );\n\n\n      if (!placement) {\n\n        previewPlacementName.textContent =\n          '—';\n\n        previewDesign.style.display =\n          'none';\n\n        return;\n\n      }\n\n\n      previewArea.classList.add(\n        'placement-' + placement\n      );\n\n\n      const placementNames = {\n\n        'chest':\n          'Chest',\n\n        'breast':\n          'Breast',\n\n        'center':\n          'Center',\n\n        'right-sleeve':\n          'Right Sleeve',\n\n        'left-sleeve':\n          'Left Sleeve'\n\n      };\n\n\n      previewPlacementName.textContent =\n        placementNames[placement] ||\n        placement;\n\n\n      previewDesign.style.display =\n        'block';\n\n    }\n\n\n    /* =========================================\n       VALIDATE ADD TO CART\n    ========================================= */\n\n    form.addEventListener(\n      'submit',\n      function(event) {\n\n        syncText();\n\n        syncPlacement();\n\n\n        /* Instructions required */\n\n        if (\n          !textarea.value.trim()\n        ) {\n\n          event.preventDefault();\n\n          customizationError.style.display =\n            'block';\n\n          textarea.focus();\n\n          return false;\n\n        }\n\n\n        /* Placement required */\n\n        if (\n          !placementSelect.value\n        ) {\n\n          event.preventDefault();\n\n          alert(\n            'Please select where you want your design to be placed.'\n          );\n\n          placementSelect.focus();\n\n          return false;\n\n        }\n\n\n        /* Image filename */\n\n        if (\n          imageInput.files &&\n          imageInput.files.length\n        ) {\n\n          imageProperty.value =\n            imageInput.files[0].name;\n\n        } else {\n\n          imageProperty.value =\n            '';\n\n        }\n\n      },\n      true\n    );\n\n  }\n\n\n  /* =========================================\n     INITIAL SETUP\n  ========================================= */\n\n  setupForm();\n\n\n  /* =========================================\n     SHOPIFY DYNAMIC FORM OBSERVER\n  ========================================= */\n\n  const observer =\n    new MutationObserver(\n      function() {\n\n        setupForm();\n\n      }\n    );\n\n\n  observer.observe(\n    document.body,\n    {\n      childList: true,\n      subtree: true\n    }\n  );\n\n})();\n\n</script>",
+            "padding_top": 0,
+            "padding_bottom": 30
+          }
+        },
+        "ae0ed4c8-948a-46c7-b292-5f2687b8c94d": {
+          "type": "buy_button",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true,
+            "show_checkbox": false,
+            "padding_top": 0,
+            "padding_bottom": 30
+          }
+        },
+        "941018d2-7613-4b60-aa2c-94962df06c94": {
+          "type": "trustbadge",
+          "settings": {
+            "trustbadge_heading": "<p>Guarantee Safe Checkout</p>",
+            "trustbadge_position": "above",
+            "trustbadge_width": "80%",
+            "trustbadge_background": "#f8f8f8",
+            "padding_top": 0,
+            "padding_bottom": 30
+          }
+        },
+        "367088f1-d502-47f7-b8b1-1c3f0e2221be": {
+          "type": "pickup",
+          "settings": {
+            "padding_top": 0,
+            "padding_bottom": 30
+          }
+        },
+        "367088f1-d502-47f7-b8b1-1c3f0e2221ce": {
+          "type": "shipping",
+          "settings": {
+            "show_delivery": true,
+            "delivery": "<p>Estimate delivery times: <strong>12-26 days</strong> (International), <strong>3-6 days</strong> (United States).</p>",
+            "show_return": true,
+            "return": "<p>Return within <strong>45 days</strong> of purchase. Duties & taxes are non-refundable.</p>",
+            "padding_top": 0,
+            "padding_bottom": 30
+          }
+        },
+        "cac56f9f-8acd-4ad3-bdcc-54a1403984cf": {
+          "type": "complementary",
+          "settings": {
+            "layout": "carousel",
+            "collapse_style": false,
+            "complementary_title": "Pairs well with",
+            "products_to_show": 10,
+            "show_pagination": true,
+            "show_pagination_mobile": false,
+            "distinct_color_scheme": false,
+            "product_card_color_scheme": "",
+            "padding_top": 0,
+            "padding_bottom": 30
+          }
+        },
+        "ae0ed4c8-948a-46c7-b292-5f2687b8c94e": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "text block",
+            "text_style": "normal",
+            "padding_top": 0,
+            "padding_bottom": 30
+          }
+        },
+        "367088f1-d502-47f7-b8b1-1c3f0e2221af": {
+          "type": "richtext",
+          "disabled": true,
+          "settings": {
+            "richtext": "<p>Rich text block</p>",
+            "padding_top": 0,
+            "padding_bottom": 30
+          }
+        }
+      },
+      "block_order": [
+        "b9220087-e178-48b9-a33a-095a4119abaf",
+        "bedc5e2d-642d-4448-8569-c7fcfd527042",
+        "b1d95bc4-490b-4b8c-914a-89b1323d2a43",
+        "b1d95bc4-490b-4b8c-914a-89b1323d2a41",
+        "4dabf9d3-3372-4f5a-9edf-1e1f03527b1k",
+        "4dabf9d3-3372-4f5a-9edf-1e1f03527b1b",
+        "4dabf9d3-3372-4f5a-9edf-1e1f03527b1c",
+        "4dabf9d3-3372-4f5a-9edf-1e1f03527b1a",
+        "ae0ed4c8-948a-46c7-b292-5f2687b8c94h",
+        "addon_buttons_MGW7hE",
+        "liquid_B6MPgM",
+        "ae0ed4c8-948a-46c7-b292-5f2687b8c94d",
+        "941018d2-7613-4b60-aa2c-94962df06c94",
+        "367088f1-d502-47f7-b8b1-1c3f0e2221be",
+        "367088f1-d502-47f7-b8b1-1c3f0e2221ce",
+        "cac56f9f-8acd-4ad3-bdcc-54a1403984cf",
+        "ae0ed4c8-948a-46c7-b292-5f2687b8c94e",
+        "367088f1-d502-47f7-b8b1-1c3f0e2221af"
+      ],
+      "settings": {
+        "width": "box",
+        "layout": "style3",
+        "wishlist": true,
+        "media_sticky": true,
+        "image_zoom_hover": true,
+        "image_zoom_click": true,
+        "video_autoplay": false,
+        "video_modal": false,
+        "product_360": false,
+        "thumbnail_mobile": "thumbnail",
+        "sticky_desktop": true,
+        "sticky_mobile": true,
+        "sticky_dynamic": false,
+        "sticky_compare": false,
+        "sticky_wishlist": false,
+        "color_scheme": "",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "use_parallax": true,
+        "background_image_animation": "none",
+        "background_video_url": "",
+        "background_video_animation": "none",
+        "background_overlay": "",
+        "background_margin": 0,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "product-information-tabs": {
+      "type": "product-information-tabs",
+      "blocks": {
+        "tab1": {
+          "type": "description",
+          "settings": {
+            "header": "Product description"
+          }
+        },
+        "tab2": {
+          "type": "shipping",
+          "settings": {
+            "header": "Shipping & return"
+          }
+        }
+      },
+      "block_order": [
+        "tab1",
+        "tab2"
+      ],
+      "settings": {
+        "width": "box",
+        "color_scheme": "",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "use_parallax": true,
+        "background_image_animation": "none",
+        "background_video_url": "",
+        "background_video_animation": "none",
+        "background_overlay": "",
+        "background_margin": 0,
+        "padding_top": 50,
+        "padding_bottom": 0
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "width": "box",
+        "layout": "carousel",
+        "heading_title": "You Might Also Like",
+        "heading_align": "center",
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "show_navigation": true,
+        "show_navigation_mobile": false,
+        "show_pagination": true,
+        "show_pagination_mobile": false,
+        "distinct_color_scheme": false,
+        "product_card_color_scheme": "",
+        "color_scheme": "",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "use_parallax": true,
+        "background_image_animation": "none",
+        "background_video_url": "",
+        "background_video_animation": "none",
+        "background_overlay": "",
+        "background_margin": 0,
+        "padding_top": 50,
+        "padding_bottom": 0
+      }
+    },
+    "merchera_craft_showcase": {
+      "type": "merchera-craft-showcase",
+      "settings": {}
+    },
+    "merchera_process": {
+      "type": "merchera-process",
+      "settings": {
+        "eyebrow": "THE MERCHERA STUDIO FLOW",
+        "heading": "How Your Custom Order Is Crafted",
+        "subheading": "Every bespoke piece goes through our 4-step London studio quality check before dispatch."
+      }
+    },
+    "merchera_faq_cta": {
+      "type": "merchera-faq-cta",
+      "settings": {}
+    }
+  },
+  "order": [
+    "breadcrumb-v1",
+    "main-product",
+    "product-information-tabs",
+    "merchera_craft_showcase",
+    "merchera_process",
+    "product-recommendations",
+    "merchera_faq_cta"
+  ]
+}

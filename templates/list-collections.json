@@ -1,0 +1,176 @@
+{
+  "sections": {
+    "main-page-heading": {
+      "type": "main-page-heading",
+      "settings": {
+        "title_tag": "h1",
+        "title": "All Studio Collections",
+        "description": "<p>Explore our bespoke collections of heavyweight apparel, custom embroidered headwear,<br/>luxury canvas totes, and print essentials crafted in our UK studio.</p>",
+        "align": "center",
+        "color_scheme": "",
+        "background_type": "color",
+        "background_color": "#f5eee5",
+        "background_gradient": "",
+        "use_parallax": true,
+        "background_image_animation": "none",
+        "background_video_url": "",
+        "background_video_animation": "none",
+        "background_overlay": "",
+        "background_margin": 0,
+        "padding_top": 60,
+        "padding_bottom": 30
+      }
+    },
+    "merchera_marquee": {
+      "type": "merchera-marquee",
+      "blocks": {
+        "item_1": {
+          "type": "ticker_item",
+          "settings": {
+            "text": "Bespoke 3D Embroidery & HD Print",
+            "badge": "STUDIO GRADE"
+          }
+        },
+        "item_2": {
+          "type": "ticker_item",
+          "settings": {
+            "text": "Heavyweight Hoodies, Polos & Round-Bottom Tees",
+            "badge": "LUXURY BLANKS"
+          }
+        },
+        "item_3": {
+          "type": "ticker_item",
+          "settings": {
+            "text": "Custom Canvas Tote Bags, Caps & Business Cards",
+            "badge": "NO MINIMUMS"
+          }
+        },
+        "item_4": {
+          "type": "ticker_item",
+          "settings": {
+            "text": "Complimentary Tracked UK Delivery Over £60",
+            "badge": "48H DISPATCH"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ],
+      "settings": {
+        "bg_color": "#641f1f",
+        "text_color": "#fffdf9",
+        "speed": 30,
+        "padding_y": 14
+      }
+    },
+    "main": {
+      "type": "main-list-collections",
+      "blocks": {
+        "3be361b1-1ee2-4f6b-b8b6-590e4f6dbe76": {
+          "type": "collection",
+          "settings": {
+            "collection": "hoodies",
+            "custom_image": "shopify://shop_images/watermarked_img_6068743154176564985-Photoroom.png"
+          }
+        },
+        "ffcfc673-ace0-4528-992e-5f0d62796909": {
+          "type": "collection",
+          "settings": {
+            "collection": "oversized-drop-shoulder-t-shirts",
+            "custom_image": "shopify://shop_images/watermarked_img_18099013563614544329-Photoroom.png"
+          }
+        },
+        "517f4c7b-a4e9-40db-97bf-00ded2faf142": {
+          "type": "collection",
+          "settings": {
+            "collection": "tote-bags",
+            "custom_image": "shopify://shop_images/watermarked_img_9546679616833625209-Photoroom.png"
+          }
+        },
+        "f6d6ef68-e996-4fcd-b6da-b107087546af": {
+          "type": "collection",
+          "settings": {
+            "collection": "caps",
+            "custom_image": "shopify://shop_images/watermarked_img_10852052229908788711-Photoroom.png"
+          }
+        },
+        "500a2519-10b2-4423-846d-71b7877204cb": {
+          "type": "collection",
+          "settings": {
+            "collection": "round-bottom-shirts",
+            "custom_image": "shopify://shop_images/watermarked_img_5537340820152429387-Photoroom.png"
+          }
+        },
+        "9a0a0ca3-7c22-4c1c-ba2d-259e2e497b33": {
+          "type": "collection",
+          "settings": {
+            "collection": "cards",
+            "custom_image": "shopify://shop_images/image-Photoroom_986ffcd5-ae42-44ac-8740-6dd3d73e47f2.png"
+          }
+        },
+        "7404e6e3-b5bb-44f3-ba36-2ebacfb51ef6": {
+          "type": "collection",
+          "settings": {
+            "collection": "polo-shirts",
+            "custom_image": "shopify://shop_images/image-Photoroom_2_584f0dbe-7b3f-4572-9623-aa9f793e5129.png"
+          }
+        }
+      },
+      "block_order": [
+        "3be361b1-1ee2-4f6b-b8b6-590e4f6dbe76",
+        "ffcfc673-ace0-4528-992e-5f0d62796909",
+        "517f4c7b-a4e9-40db-97bf-00ded2faf142",
+        "f6d6ef68-e996-4fcd-b6da-b107087546af",
+        "500a2519-10b2-4423-846d-71b7877204cb",
+        "9a0a0ca3-7c22-4c1c-ba2d-259e2e497b33",
+        "7404e6e3-b5bb-44f3-ba36-2ebacfb51ef6"
+      ],
+      "settings": {
+        "width": "box",
+        "list_type": "custom",
+        "sort": "alphabetical",
+        "collection_loadtype": "infinity",
+        "collections_per_page": 8,
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "collection_card_show_product_count": true,
+        "collection_card_aspect_ratio": "3/1.5",
+        "card_color_scheme": "",
+        "color_scheme": "",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "use_parallax": true,
+        "background_image_animation": "none",
+        "background_video_url": "",
+        "background_video_animation": "none",
+        "background_overlay": "",
+        "background_margin": 0,
+        "padding_top": 50,
+        "padding_bottom": 60
+      }
+    },
+    "merchera_process": {
+      "type": "merchera-process",
+      "settings": {
+        "eyebrow": "THE MERCHERA STUDIO FLOW",
+        "heading": "From Concept to Custom Masterpiece",
+        "subheading": "Whether you are launching a streetwear label, outfitting your team, or crafting bespoke event merch, our 4-step studio process guarantees retail-grade perfection."
+      }
+    },
+    "merchera_faq_cta": {
+      "type": "merchera-faq-cta",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main-page-heading",
+    "merchera_marquee",
+    "main",
+    "merchera_process",
+    "merchera_faq_cta"
+  ]
+}

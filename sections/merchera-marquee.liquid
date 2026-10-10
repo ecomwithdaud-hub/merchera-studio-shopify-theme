@@ -1,0 +1,213 @@
+<style>
+  .mc-marquee-section-{{ section.id }} {
+    position: relative;
+    background: {{ section.settings.bg_color | default: '#641f1f' }};
+    color: {{ section.settings.text_color | default: '#fffdf9' }};
+    border-top: 1px solid rgba(255, 253, 249, 0.14);
+    border-bottom: 1px solid rgba(255, 253, 249, 0.14);
+    padding: {{ section.settings.padding_y | default: 16 }}px 0;
+    overflow: hidden;
+    user-select: none;
+    z-index: 4;
+  }
+
+  .mc-marquee-section-{{ section.id }}::before,
+  .mc-marquee-section-{{ section.id }}::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 90px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .mc-marquee-section-{{ section.id }}::before {
+    left: 0;
+    background: linear-gradient(to right, {{ section.settings.bg_color | default: '#641f1f' }}, transparent);
+  }
+
+  .mc-marquee-section-{{ section.id }}::after {
+    right: 0;
+    background: linear-gradient(to left, {{ section.settings.bg_color | default: '#641f1f' }}, transparent);
+  }
+
+  .mc-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: mcMarqueeScroll {{ section.settings.speed | default: 32 }}s linear infinite;
+  }
+
+  .mc-marquee-section-{{ section.id }}:hover .mc-marquee-track {
+    animation-play-state: paused;
+  }
+
+  .mc-marquee-group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .mc-marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 0 26px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .mc-marquee-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(255, 253, 249, 0.14);
+    border: 1px solid rgba(255, 253, 249, 0.25);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #f5eee5;
+  }
+
+  .mc-marquee-star {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #e9ddd0;
+    font-size: 14px;
+    animation: mcSpinStar 9s linear infinite;
+  }
+
+  @keyframes mcMarqueeScroll {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  @keyframes mcSpinStar {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      transform: rotate(180deg) scale(1.18);
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+</style>
+
+<section class="mc-marquee-section-{{ section.id }}" aria-label="Store Highlights Ticker">
+  <div class="mc-marquee-track">
+    {%- for loop_pass in (1..2) -%}
+      <div class="mc-marquee-group" {% if loop_pass == 2 %}aria-hidden="true"{% endif %}>
+        {%- if section.blocks.size > 0 -%}
+          {%- for block in section.blocks -%}
+            <div class="mc-marquee-item" {% if loop_pass == 1 %}{{ block.shopify_attributes }}{% endif %}>
+              <span class="mc-marquee-star">✦</span>
+              <span>{{ block.settings.text }}</span>
+              {%- if block.settings.badge != blank -%}
+                <span class="mc-marquee-badge">{{ block.settings.badge }}</span>
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        {%- else -%}
+          <div class="mc-marquee-item">
+            <span class="mc-marquee-star">✦</span>
+            <span>Bespoke Embroidery & HD Screen Print</span>
+            <span class="mc-marquee-badge">STUDIO GRADE</span>
+          </div>
+          <div class="mc-marquee-item">
+            <span class="mc-marquee-star">✦</span>
+            <span>Heavyweight Hoodies, Polos & Tees</span>
+            <span class="mc-marquee-badge">LUXURY BLANKS</span>
+          </div>
+          <div class="mc-marquee-item">
+            <span class="mc-marquee-star">✦</span>
+            <span>Custom Tote Bags, Caps & Print Cards</span>
+            <span class="mc-marquee-badge">NO MINIMUMS</span>
+          </div>
+          <div class="mc-marquee-item">
+            <span class="mc-marquee-star">✦</span>
+            <span>Free Tracked UK Delivery Over £60</span>
+            <span class="mc-marquee-badge">48H DISPATCH</span>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Merchera Kinetic Marquee",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#641f1f"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#fffdf9"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 15,
+      "max": 60,
+      "step": 1,
+      "unit": "s",
+      "label": "Scroll Speed (lower is faster)",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "padding_y",
+      "min": 10,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Vertical Padding",
+      "default": 16
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ticker_item",
+      "name": "Ticker Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Announcement Text",
+          "default": "Bespoke Embroidery & HD Screen Print"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Pill Badge (Optional)",
+          "default": "STUDIO GRADE"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Merchera Kinetic Marquee"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,28 @@
+# Shopify Theme .gitignore
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment and sensitive keys
+.env
+*.pem
+*.key
+
+# Editor and OS
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Node and logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Shopify Theme CLI & temp artifacts
+.shopify/
+config/settings_data.json.bak
+*.tmp
+*.bak
