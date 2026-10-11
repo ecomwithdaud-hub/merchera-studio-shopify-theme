@@ -112,6 +112,63 @@
         "padding_bottom": 50
       }
     },
+    "loved_moment": {
+      "type": "loved-moment",
+      "blocks": {
+        "collection_card_j8DrJk": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "polo-shirts"
+          }
+        },
+        "collection_card_hVRBic": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "hoodies"
+          }
+        },
+        "collection_card_64aVBq": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "round-bottom-shirts"
+          }
+        },
+        "collection_card_HhQCC7": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "tote-bags"
+          }
+        },
+        "collection_card_TCgU7Y": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "caps"
+          }
+        },
+        "collection_card_NRtgh9": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "cards"
+          }
+        }
+      },
+      "block_order": [
+        "collection_card_j8DrJk",
+        "collection_card_hVRBic",
+        "collection_card_64aVBq",
+        "collection_card_HhQCC7",
+        "collection_card_TCgU7Y",
+        "collection_card_NRtgh9"
+      ],
+      "name": "Loved Moments Grid",
+      "settings": {
+        "eyebrow": "CURATED CUSTOM ESSENTIALS",
+        "heading": "Our Most-Loved Moments",
+        "subheading": "Crafted on heavyweight blanks with razor-sharp embroidery and high-definition studio print.",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
     "merchera_process": {
       "type": "merchera-process",
       "settings": {
@@ -129,6 +186,7 @@
     "collection-title",
     "merchera_marquee",
     "main-collection",
+    "loved_moment",
     "merchera_process",
     "merchera_faq_cta"
   ]

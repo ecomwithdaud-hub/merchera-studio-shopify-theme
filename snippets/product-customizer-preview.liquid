@@ -1,0 +1,851 @@
+<div class="customization-box" id="customization-box-{{ section.id }}">
+
+  <h3 class="customization-title">
+    Customization Details
+  </h3>
+
+  <p class="customization-description">
+    Tell us exactly how you want your product customized.
+  </p>
+
+  <label class="customization-label" for="custom-instructions-{{ section.id }}">
+    Your Instructions<span class="required-star">*</span>
+  </label>
+
+  <textarea
+    id="custom-instructions-{{ section.id }}"
+    class="customization-textarea"
+    placeholder="Write your customization requirements here (e.g., logo size, text, placement details)…"
+    rows="5"
+  ></textarea>
+
+  <p class="customization-note">
+    Please provide complete and accurate details so our UK studio crafts your product correctly.
+  </p>
+
+  <!-- IMAGE UPLOAD -->
+  <label class="customization-label image-label">
+    Upload Your Design / Reference Image
+  </label>
+
+  <p class="upload-description">
+    Upload your logo, artwork, embroidery graphic, or reference image (PNG, JPG, WEBP up to 10 MB).
+  </p>
+
+  <label
+    class="custom-upload-button"
+    for="custom-image-{{ section.id }}"
+  >
+    📎 Choose Design / Logo
+  </label>
+
+  <input
+    type="file"
+    id="custom-image-{{ section.id }}"
+    class="custom-image-input"
+    accept="image/jpeg,image/png,image/webp"
+  >
+
+  <!-- IMAGE THUMBNAIL PREVIEW -->
+  <div
+    class="image-preview-wrapper"
+    id="image-preview-{{ section.id }}"
+    style="display:none;"
+  >
+    <img
+      id="image-preview-img-{{ section.id }}"
+      class="image-preview"
+      alt="Uploaded artwork preview"
+    >
+    <button
+      type="button"
+      class="remove-image-button"
+      id="remove-image-{{ section.id }}"
+    >
+      ✕ Remove image
+    </button>
+  </div>
+
+  <!-- DESIGN PLACEMENT -->
+  <div
+    class="design-placement-section"
+    id="design-placement-section-{{ section.id }}"
+  >
+    <label
+      class="customization-label"
+      for="design-placement-{{ section.id }}"
+    >
+      Design Placement<span class="required-star">*</span>
+    </label>
+
+    <p class="placement-description">
+      Where would you like your design to be placed?
+    </p>
+
+    <select
+      id="design-placement-{{ section.id }}"
+      class="design-placement-select"
+    >
+      <option value="">
+        Select placement…
+      </option>
+      <option value="chest">
+        Chest (Top Right — As shown on shirt)
+      </option>
+      <option value="breast">
+        Left Chest / Breast
+      </option>
+      <option value="center">
+        Center Chest (Full Front)
+      </option>
+      <option value="right-sleeve">
+        Right Sleeve
+      </option>
+      <option value="left-sleeve">
+        Left Sleeve
+      </option>
+    </select>
+  </div>
+
+  <!-- LIVE PRODUCT PREVIEW -->
+  <div
+    class="custom-product-preview"
+    id="custom-product-preview-{{ section.id }}"
+    style="display:none;"
+  >
+    <div class="preview-heading">
+      <h4>
+        Preview Your Customization
+      </h4>
+      <p>
+        Real-time visual simulation of your design on the product.
+      </p>
+    </div>
+
+    <div class="preview-product-area" id="preview-product-area-{{ section.id }}">
+      <img
+        class="preview-product-image"
+        id="preview-product-image-{{ section.id }}"
+        src="{{ product.featured_image | image_url: width: 1200 }}"
+        alt="{{ product.title }}"
+      >
+      <!-- Visual placement bounding guide -->
+      <div class="preview-target-indicator" id="preview-target-indicator-{{ section.id }}">
+        <span class="preview-target-badge">✦ Imprint Zone</span>
+      </div>
+      <img
+        class="preview-design-image"
+        id="preview-design-image-{{ section.id }}"
+        alt="Your uploaded design"
+      >
+    </div>
+
+    <div class="preview-placement-text">
+      Selected Placement:
+      <strong id="preview-placement-name-{{ section.id }}">
+        —
+      </strong>
+    </div>
+
+    <p class="preview-disclaimer">
+      ✦ Studio preview indicates approximate position & scale. Our production team will align and proof your embroidery / print with optical precision prior to dispatch.
+    </p>
+  </div>
+
+  <!-- ERRORS -->
+  <p
+    class="upload-error"
+    id="upload-error-{{ section.id }}"
+    style="display:none;"
+  ></p>
+
+  <p
+    class="customization-error"
+    id="customization-error-{{ section.id }}"
+    style="display:none;"
+  >
+    Please enter your customization details before adding this product to cart.
+  </p>
+
+</div>
+
+<style>
+/* =========================================
+   MERCHERA PRODUCT CUSTOMIZER & PLACEMENT
+========================================= */
+
+.customization-box {
+  margin: 24px 0;
+  padding: 22px;
+  background: #fffdf9;
+  border: 1px solid #d5c6b7;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(33, 27, 24, 0.04);
+  box-sizing: border-box;
+}
+
+.customization-title {
+  margin: 0 0 6px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #211b18;
+  letter-spacing: -0.01em;
+}
+
+.customization-description {
+  margin: 0 0 16px;
+  font-size: 13.5px;
+  color: #6f625a;
+  line-height: 1.5;
+}
+
+.customization-label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #211b18;
+}
+
+.required-star {
+  color: #641f1f;
+  margin-left: 3px;
+  font-weight: 700;
+}
+
+.customization-textarea {
+  display: block;
+  width: 100%;
+  min-height: 110px;
+  padding: 12px 14px;
+  box-sizing: border-box;
+  resize: vertical;
+  font: inherit;
+  font-size: 13.5px;
+  border: 1px solid #d5c6b7;
+  border-radius: 10px;
+  background: #fcf8f4;
+  color: #211b18;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.customization-textarea:focus {
+  outline: none;
+  border-color: #641f1f;
+  box-shadow: 0 0 0 3px rgba(100, 31, 31, 0.12);
+  background: #ffffff;
+}
+
+.customization-note,
+.upload-description,
+.placement-description {
+  margin: 6px 0 16px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #8c7e75;
+}
+
+/* =========================================
+   IMAGE UPLOAD
+========================================= */
+
+.image-label {
+  margin-top: 16px;
+  margin-bottom: 4px;
+}
+
+.custom-upload-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 20px;
+  background: #f5eee5;
+  border: 1px solid #d5c6b7;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #641f1f;
+  transition: all 0.25s ease;
+}
+
+.custom-upload-button:hover {
+  background: #641f1f;
+  color: #fffdf9;
+  border-color: #641f1f;
+  transform: translateY(-1px);
+}
+
+.custom-image-input {
+  display: none !important;
+}
+
+.image-preview-wrapper {
+  margin-top: 14px;
+  padding: 12px;
+  background: #f5eee5;
+  border-radius: 12px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.image-preview {
+  display: block;
+  max-width: 140px;
+  max-height: 140px;
+  border-radius: 8px;
+  border: 1px solid #d5c6b7;
+  object-fit: contain;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.remove-image-button {
+  margin-top: 8px;
+  padding: 4px 8px;
+  border: 0;
+  background: transparent;
+  color: #a82424;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.remove-image-button:hover {
+  color: #641f1f;
+}
+
+/* =========================================
+   DESIGN PLACEMENT SELECT
+========================================= */
+
+.design-placement-section {
+  margin-top: 20px;
+}
+
+.design-placement-select {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 14px;
+  border: 1px solid #d5c6b7;
+  border-radius: 10px;
+  background: #fcf8f4;
+  color: #211b18;
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.design-placement-select:focus {
+  outline: none;
+  border-color: #641f1f;
+  box-shadow: 0 0 0 3px rgba(100, 31, 31, 0.12);
+}
+
+/* =========================================
+   LIVE PRODUCT PREVIEW CANVAS
+========================================= */
+
+.custom-product-preview {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1.5px solid #d5c6b7;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 28px rgba(33, 27, 24, 0.06);
+  box-sizing: border-box;
+}
+
+.preview-heading h4 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #211b18;
+}
+
+.preview-heading p {
+  margin: 0 0 16px;
+  font-size: 12px;
+  color: #6f625a;
+}
+
+.preview-product-area {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f9f6f2;
+  border: 1px solid #ebdcd0;
+  box-sizing: border-box;
+}
+
+.preview-product-area img.preview-product-image {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  box-sizing: border-box !important;
+  user-select: none !important;
+  pointer-events: none !important;
+}
+
+/* Placement Target Indicator Bounding Box */
+.preview-target-indicator {
+  position: absolute;
+  display: none;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  border: 1.5px dashed rgba(100, 31, 31, 0.65);
+  background: rgba(100, 31, 31, 0.05);
+  border-radius: 6px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 2;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-target-indicator.has-design {
+  border-color: rgba(100, 31, 31, 0.3);
+  background: transparent;
+}
+
+.preview-target-badge {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #641f1f;
+  background: rgba(255, 253, 249, 0.85);
+  padding: 2px 5px;
+  border-radius: 4px;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.preview-target-indicator.has-design .preview-target-badge {
+  display: none;
+}
+
+/* Uploaded Design Layer */
+.preview-product-area img.preview-design-image {
+  position: absolute !important;
+  display: none;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  box-sizing: border-box !important;
+  transform: translate(-50%, -50%) !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  z-index: 3 !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.22));
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* =========================================================================
+   EXACT DESIGN PLACEMENT COORDINATES (CALIBRATED TO PRODUCT POLO SHIRT)
+   ========================================================================= */
+
+/* 1. CHEST / BREAST: Upper Chest / Wearer's Left (Viewer's Right) — matches "YOUR DESIGN HERE" */
+.preview-product-area.placement-chest .preview-target-indicator,
+.preview-product-area.placement-breast .preview-target-indicator {
+  display: flex;
+  left: 59.5% !important;
+  top: 28% !important;
+  width: 14% !important;
+  height: 11% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.preview-product-area.placement-chest .preview-design-image,
+.preview-product-area.placement-breast .preview-design-image {
+  left: 59.5% !important;
+  top: 28% !important;
+  max-width: 14% !important;
+  max-height: 11% !important;
+  width: auto !important;
+  height: auto !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+/* 2. CENTER: Full Front Chest Center */
+.preview-product-area.placement-center .preview-target-indicator {
+  display: flex;
+  left: 50% !important;
+  top: 44% !important;
+  width: 28% !important;
+  height: 24% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.preview-product-area.placement-center .preview-design-image {
+  left: 50% !important;
+  top: 44% !important;
+  max-width: 26% !important;
+  max-height: 22% !important;
+  width: auto !important;
+  height: auto !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+/* 3. RIGHT SLEEVE: Viewer's Right Sleeve */
+.preview-product-area.placement-right-sleeve .preview-target-indicator {
+  display: flex;
+  left: 74% !important;
+  top: 36% !important;
+  width: 15% !important;
+  height: 10% !important;
+  transform: translate(-50%, -50%) rotate(22deg) !important;
+}
+
+.preview-product-area.placement-right-sleeve .preview-design-image {
+  left: 74% !important;
+  top: 36% !important;
+  max-width: 14% !important;
+  max-height: 9% !important;
+  width: auto !important;
+  height: auto !important;
+  transform: translate(-50%, -50%) rotate(22deg) !important;
+}
+
+/* 4. LEFT SLEEVE: Viewer's Left Sleeve */
+.preview-product-area.placement-left-sleeve .preview-target-indicator {
+  display: flex;
+  left: 26% !important;
+  top: 36% !important;
+  width: 15% !important;
+  height: 10% !important;
+  transform: translate(-50%, -50%) rotate(-22deg) !important;
+}
+
+.preview-product-area.placement-left-sleeve .preview-design-image {
+  left: 26% !important;
+  top: 36% !important;
+  max-width: 14% !important;
+  max-height: 9% !important;
+  width: auto !important;
+  height: auto !important;
+  transform: translate(-50%, -50%) rotate(-22deg) !important;
+}
+
+/* =========================================
+   PREVIEW CAPTION & STATUS
+======================================== */
+
+.preview-placement-text {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 13.5px;
+  color: #211b18;
+}
+
+.preview-placement-text strong {
+  color: #641f1f;
+  margin-left: 4px;
+}
+
+.preview-disclaimer {
+  margin: 10px 0 0;
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: #8c7e75;
+  text-align: center;
+}
+
+/* =========================================
+   ERRORS
+========================================= */
+
+.upload-error,
+.customization-error {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(168, 36, 36, 0.08);
+  border: 1px solid rgba(168, 36, 36, 0.3);
+  font-size: 13px;
+  line-height: 1.4;
+  color: #a82424;
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media screen and (max-width: 749px) {
+  .customization-box {
+    margin: 16px 0;
+    padding: 16px;
+  }
+  .custom-upload-button {
+    width: 100%;
+  }
+  .custom-product-preview {
+    padding: 14px;
+  }
+}
+</style>
+
+<script>
+(function() {
+  function initCustomizer() {
+    const box = document.getElementById('customization-box-{{ section.id }}');
+    if (!box) return;
+
+    const textarea = box.querySelector('.customization-textarea');
+    const imageInput = box.querySelector('.custom-image-input');
+    const previewWrapper = box.querySelector('.image-preview-wrapper');
+    const previewImage = box.querySelector('.image-preview');
+    const removeImageButton = box.querySelector('.remove-image-button');
+    const uploadError = box.querySelector('.upload-error');
+    const customizationError = box.querySelector('.customization-error');
+    const placementSelect = box.querySelector('.design-placement-select');
+    const productPreview = box.querySelector('.custom-product-preview');
+    const previewArea = box.querySelector('.preview-product-area');
+    const previewDesign = box.querySelector('.preview-design-image');
+    const previewIndicator = box.querySelector('.preview-target-indicator');
+    const previewPlacementName = box.querySelector('.preview-placement-text strong');
+
+    function getProductForm() {
+      return document.querySelector('form[action*="/cart/add"]');
+    }
+
+    function getOrCreateProperty(form, propertyName) {
+      let input = form.querySelector('input[data-custom-property="' + propertyName + '"]');
+      if (!input) {
+        input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'properties[' + propertyName + ']';
+        input.setAttribute('data-custom-property', propertyName);
+        form.appendChild(input);
+      }
+      return input;
+    }
+
+    function setupForm() {
+      const form = getProductForm();
+      if (!form) return;
+
+      form.setAttribute('enctype', 'multipart/form-data');
+
+      const instructionsProperty = getOrCreateProperty(form, 'Customization Details');
+      const imageProperty = getOrCreateProperty(form, 'Customization Image');
+      const placementProperty = getOrCreateProperty(form, 'Design Placement');
+
+      function syncText() {
+        if (instructionsProperty && textarea) {
+          instructionsProperty.value = textarea.value.trim();
+        }
+      }
+
+      function syncPlacement() {
+        if (placementProperty && placementSelect) {
+          placementProperty.value = placementSelect.value;
+        }
+      }
+
+      if (imageInput && imageInput.parentElement !== form) {
+        form.appendChild(imageInput);
+        imageInput.name = 'properties[Customization Image]';
+      }
+
+      if (imageInput && !imageInput.dataset.bound) {
+        imageInput.dataset.bound = 'true';
+        imageInput.addEventListener('change', function() {
+          if (uploadError) uploadError.style.display = 'none';
+          const file = imageInput.files[0];
+          if (!file) {
+            if (previewWrapper) previewWrapper.style.display = 'none';
+            if (previewDesign) {
+              previewDesign.src = '';
+              previewDesign.style.display = 'none';
+            }
+            if (previewIndicator) previewIndicator.classList.remove('has-design');
+            return;
+          }
+
+          if (!file.type.startsWith('image/')) {
+            if (uploadError) {
+              uploadError.textContent = 'Please upload a valid image file (PNG, JPG, or WEBP).';
+              uploadError.style.display = 'block';
+            }
+            imageInput.value = '';
+            if (previewWrapper) previewWrapper.style.display = 'none';
+            if (previewDesign) {
+              previewDesign.src = '';
+              previewDesign.style.display = 'none';
+            }
+            if (previewIndicator) previewIndicator.classList.remove('has-design');
+            return;
+          }
+
+          if (file.size > 10 * 1024 * 1024) {
+            if (uploadError) {
+              uploadError.textContent = 'Image must be smaller than 10 MB.';
+              uploadError.style.display = 'block';
+            }
+            imageInput.value = '';
+            if (previewWrapper) previewWrapper.style.display = 'none';
+            if (previewDesign) {
+              previewDesign.src = '';
+              previewDesign.style.display = 'none';
+            }
+            if (previewIndicator) previewIndicator.classList.remove('has-design');
+            return;
+          }
+
+          const reader = new FileReader();
+          reader.onload = function(event) {
+            const imageURL = event.target.result;
+            if (previewImage) previewImage.src = imageURL;
+            if (previewWrapper) previewWrapper.style.display = 'block';
+
+            if (previewDesign) {
+              previewDesign.src = imageURL;
+            }
+            updateProductPreview();
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+
+      if (removeImageButton && !removeImageButton.dataset.bound) {
+        removeImageButton.dataset.bound = 'true';
+        removeImageButton.addEventListener('click', function() {
+          if (imageInput) imageInput.value = '';
+          if (previewImage) previewImage.src = '';
+          if (previewDesign) {
+            previewDesign.src = '';
+            previewDesign.style.display = 'none';
+          }
+          if (previewIndicator) previewIndicator.classList.remove('has-design');
+          if (previewWrapper) previewWrapper.style.display = 'none';
+          if (uploadError) uploadError.style.display = 'none';
+        });
+      }
+
+      if (textarea && !textarea.dataset.bound) {
+        textarea.dataset.bound = 'true';
+        textarea.addEventListener('input', function() {
+          syncText();
+          if (textarea.value.trim() && customizationError) {
+            customizationError.style.display = 'none';
+          }
+        });
+      }
+
+      if (placementSelect && !placementSelect.dataset.bound) {
+        placementSelect.dataset.bound = 'true';
+        placementSelect.addEventListener('change', function() {
+          syncPlacement();
+          updateProductPreview();
+        });
+      }
+
+      function updateProductPreview() {
+        if (!previewArea || !placementSelect) return;
+        const placement = placementSelect.value;
+
+        previewArea.classList.remove(
+          'placement-chest',
+          'placement-breast',
+          'placement-center',
+          'placement-right-sleeve',
+          'placement-left-sleeve'
+        );
+
+        if (!placement) {
+          if (productPreview) productPreview.style.display = 'none';
+          if (previewPlacementName) previewPlacementName.textContent = '—';
+          if (previewDesign) previewDesign.style.display = 'none';
+          if (previewIndicator) previewIndicator.classList.remove('has-design');
+          return;
+        }
+
+        if (productPreview) productPreview.style.display = 'block';
+        previewArea.classList.add('placement-' + placement);
+
+        const placementNames = {
+          'chest': 'Chest (Top Right — As shown on shirt)',
+          'breast': 'Left Chest / Breast',
+          'center': 'Center Front',
+          'right-sleeve': 'Right Sleeve',
+          'left-sleeve': 'Left Sleeve'
+        };
+
+        if (previewPlacementName) {
+          previewPlacementName.textContent = placementNames[placement] || placement;
+        }
+
+        if (previewDesign && previewDesign.getAttribute('src')) {
+          previewDesign.style.display = 'block';
+          if (previewIndicator) previewIndicator.classList.add('has-design');
+        } else {
+          if (previewDesign) previewDesign.style.display = 'none';
+          if (previewIndicator) previewIndicator.classList.remove('has-design');
+        }
+      }
+
+      if (form && !form.dataset.boundCustomizer) {
+        form.dataset.boundCustomizer = 'true';
+        form.addEventListener('submit', function(event) {
+          syncText();
+          syncPlacement();
+
+          if (textarea && !textarea.value.trim()) {
+            event.preventDefault();
+            if (customizationError) customizationError.style.display = 'block';
+            textarea.focus();
+            return false;
+          }
+
+          if (placementSelect && !placementSelect.value) {
+            event.preventDefault();
+            alert('Please select where you want your design to be placed.');
+            placementSelect.focus();
+            return false;
+          }
+
+          if (imageProperty) {
+            if (imageInput && imageInput.files && imageInput.files.length) {
+              imageProperty.value = imageInput.files[0].name;
+            } else {
+              imageProperty.value = '';
+            }
+          }
+        }, true);
+      }
+    }
+
+    setupForm();
+
+    const observer = new MutationObserver(function() {
+      setupForm();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCustomizer);
+  } else {
+    initCustomizer();
+  }
+})();
+</script>

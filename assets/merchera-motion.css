@@ -1570,3 +1570,11 @@ footer.section-footer,
 
 
 
+
+/* ==========================================================================
+   MERCHERA STUDIO INVENTORY & SOLD-OUT SUPPRESSION
+   ========================================================================== */
+.xo-badge-sold-out,
+[class*="badge-sold-out"] {
+  display: none !important;
+}

@@ -430,6 +430,59 @@
   }
 
   /* --------------------------------------------------------------------------
+     10. Studio Inventory & Availability Enforcer
+     Guarantees products display available stock (20–30 units) and suppresses
+     sold-out statuses/badges across client variant updates.
+     -------------------------------------------------------------------------- */
+  function initInventoryAvailability(root = document) {
+    const applyAvailability = () => {
+      // 1. Hide sold-out badges
+      const badges = document.querySelectorAll('.xo-badge-sold-out, [class*="badge-sold-out"]');
+      badges.forEach((b) => {
+        b.style.display = 'none';
+      });
+
+      // 2. Ensure stock countdown text shows positive realistic inventory (20-30)
+      const stockTexts = document.querySelectorAll('.countdown-stock__text');
+      stockTexts.forEach((el) => {
+        const text = el.textContent || '';
+        if (text.includes(' 0 ') || text.toLowerCase().includes('out of stock') || text.toLowerCase().includes('sold out')) {
+          const randStock = 20 + Math.floor(Math.random() * 11);
+          el.textContent = `HURRY UP! ONLY ${randStock} LEFT IN STOCK`;
+        }
+      });
+
+      // 3. Keep Buy / Add to Cart buttons enabled with "Add to Cart"
+      const addBtns = document.querySelectorAll(
+        'xo-cart-add, .buy-button__add, form[action*="/cart/add"] button[type="submit"]'
+      );
+      addBtns.forEach((btn) => {
+        if (btn.hasAttribute('disabled')) btn.removeAttribute('disabled');
+        if (btn.hasAttribute('xo-disabled')) btn.removeAttribute('xo-disabled');
+        const textNodes = btn.querySelectorAll('span, button');
+        textNodes.forEach((node) => {
+          if (node.textContent && node.textContent.trim().toLowerCase() === 'sold out') {
+            node.textContent = 'Add to Cart';
+          }
+        });
+        if (btn.textContent && btn.textContent.trim().toLowerCase() === 'sold out') {
+          btn.textContent = 'Add to Cart';
+        }
+      });
+    };
+
+    applyAvailability();
+    setTimeout(applyAvailability, 300);
+    setTimeout(applyAvailability, 1000);
+
+    // Watch for variant switching
+    const observer = new MutationObserver(() => {
+      applyAvailability();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+
+  /* --------------------------------------------------------------------------
      Initialize & Hook into Shopify Theme Editor Events
      -------------------------------------------------------------------------- */
   function initAll(root = document) {
@@ -443,6 +496,7 @@
     initStickyHeader();
     initFreeShippingBar(root);
     initStickyProductBar();
+    initInventoryAvailability(root);
   }
 
   if (document.readyState === 'loading') {
@@ -455,3 +509,4 @@
     initAll(e.target || document);
   });
 })();
+
