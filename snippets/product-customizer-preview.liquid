@@ -15,12 +15,12 @@
   <textarea
     id="custom-instructions-{{ section.id }}"
     class="customization-textarea"
-    placeholder="Write your customization requirements here (e.g., logo size, text, placement details)…"
-    rows="5"
+    placeholder="Write your customization requirements here…"
+    rows="6"
   ></textarea>
 
   <p class="customization-note">
-    Please provide complete and accurate details so our UK studio crafts your product correctly.
+    Please provide complete and accurate details so we can customize your product correctly.
   </p>
 
   <!-- IMAGE UPLOAD -->
@@ -29,14 +29,14 @@
   </label>
 
   <p class="upload-description">
-    Upload your logo, artwork, embroidery graphic, or reference image (PNG, JPG, WEBP up to 10 MB).
+    You can upload your logo, artwork, design, or any reference image.
   </p>
 
   <label
     class="custom-upload-button"
     for="custom-image-{{ section.id }}"
   >
-    📎 Choose Design / Logo
+    📎 Choose Image
   </label>
 
   <input
@@ -46,7 +46,7 @@
     accept="image/jpeg,image/png,image/webp"
   >
 
-  <!-- IMAGE THUMBNAIL PREVIEW -->
+  <!-- IMAGE PREVIEW -->
   <div
     class="image-preview-wrapper"
     id="image-preview-{{ section.id }}"
@@ -55,14 +55,14 @@
     <img
       id="image-preview-img-{{ section.id }}"
       class="image-preview"
-      alt="Uploaded artwork preview"
+      alt="Customization image preview"
     >
     <button
       type="button"
       class="remove-image-button"
       id="remove-image-{{ section.id }}"
     >
-      ✕ Remove image
+      Remove image
     </button>
   </div>
 
@@ -87,16 +87,16 @@
       class="design-placement-select"
     >
       <option value="">
-        Select placement…
+        Select placement
       </option>
       <option value="chest">
-        Chest (Top Right — As shown on shirt)
+        Chest
       </option>
       <option value="breast">
-        Left Chest / Breast
+        Breast
       </option>
       <option value="center">
-        Center Chest (Full Front)
+        Center
       </option>
       <option value="right-sleeve">
         Right Sleeve
@@ -118,21 +118,17 @@
         Preview Your Customization
       </h4>
       <p>
-        Real-time visual simulation of your design on the product.
+        See how your design may look on the product.
       </p>
     </div>
 
-    <div class="preview-product-area" id="preview-product-area-{{ section.id }}">
+    <div class="preview-product-area">
       <img
         class="preview-product-image"
         id="preview-product-image-{{ section.id }}"
         src="{{ product.featured_image | image_url: width: 1200 }}"
         alt="{{ product.title }}"
       >
-      <!-- Visual placement bounding guide -->
-      <div class="preview-target-indicator" id="preview-target-indicator-{{ section.id }}">
-        <span class="preview-target-badge">✦ Imprint Zone</span>
-      </div>
       <img
         class="preview-design-image"
         id="preview-design-image-{{ section.id }}"
@@ -141,14 +137,14 @@
     </div>
 
     <div class="preview-placement-text">
-      Selected Placement:
+      Placement:
       <strong id="preview-placement-name-{{ section.id }}">
         —
       </strong>
     </div>
 
     <p class="preview-disclaimer">
-      ✦ Studio preview indicates approximate position & scale. Our production team will align and proof your embroidery / print with optical precision prior to dispatch.
+      Preview is for placement guidance only. Final appearance may vary depending on product, design size, print method, and production.
     </p>
   </div>
 
@@ -171,78 +167,64 @@
 
 <style>
 /* =========================================
-   MERCHERA PRODUCT CUSTOMIZER & PLACEMENT
+   MAIN CUSTOMIZATION BOX (ORIGINAL THEME)
 ========================================= */
 
 .customization-box {
-  margin: 24px 0;
-  padding: 22px;
-  background: #fffdf9;
-  border: 1px solid #d5c6b7;
-  border-radius: 16px;
-  box-shadow: 0 4px 18px rgba(33, 27, 24, 0.04);
-  box-sizing: border-box;
+  margin: 22px 0;
+  padding: 0;
 }
 
 .customization-title {
-  margin: 0 0 6px;
-  font-size: 17px;
-  font-weight: 700;
-  color: #211b18;
-  letter-spacing: -0.01em;
+  margin: 0 0 8px;
+  font-size: 18px;
+  line-height: 1.3;
 }
 
 .customization-description {
-  margin: 0 0 16px;
-  font-size: 13.5px;
-  color: #6f625a;
+  margin: 0 0 18px;
+  font-size: 14px;
   line-height: 1.5;
 }
 
 .customization-label {
   display: block;
-  margin-bottom: 7px;
-  font-size: 13.5px;
+  margin-bottom: 8px;
+  font-size: 14px;
   font-weight: 600;
-  color: #211b18;
 }
 
 .required-star {
-  color: #641f1f;
   margin-left: 3px;
-  font-weight: 700;
+  color: #a82424;
 }
 
 .customization-textarea {
   display: block;
   width: 100%;
-  min-height: 110px;
-  padding: 12px 14px;
+  min-height: 140px;
+  padding: 14px;
   box-sizing: border-box;
   resize: vertical;
   font: inherit;
-  font-size: 13.5px;
-  border: 1px solid #d5c6b7;
-  border-radius: 10px;
-  background: #fcf8f4;
-  color: #211b18;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-size: 14px;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 6px;
+  background: transparent;
 }
 
 .customization-textarea:focus {
   outline: none;
-  border-color: #641f1f;
-  box-shadow: 0 0 0 3px rgba(100, 31, 31, 0.12);
-  background: #ffffff;
+  border-color: currentColor;
 }
 
 .customization-note,
 .upload-description,
 .placement-description {
-  margin: 6px 0 16px;
+  margin: 7px 0 18px;
   font-size: 12px;
   line-height: 1.5;
-  color: #8c7e75;
+  opacity: .7;
 }
 
 /* =========================================
@@ -250,31 +232,25 @@
 ========================================= */
 
 .image-label {
-  margin-top: 16px;
-  margin-bottom: 4px;
+  margin-top: 20px;
+  margin-bottom: 5px;
 }
 
 .custom-upload-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 11px 20px;
-  background: #f5eee5;
-  border: 1px solid #d5c6b7;
-  border-radius: 999px;
+  padding: 11px 18px;
+  border: 1px solid rgba(0,0,0,.25);
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 13.5px;
-  font-weight: 600;
-  color: #641f1f;
-  transition: all 0.25s ease;
+  font-size: 14px;
+  font-weight: 500;
+  transition: opacity .2s ease;
 }
 
 .custom-upload-button:hover {
-  background: #641f1f;
-  color: #fffdf9;
-  border-color: #641f1f;
-  transform: translateY(-1px);
+  opacity: .75;
 }
 
 .custom-image-input {
@@ -283,289 +259,174 @@
 
 .image-preview-wrapper {
   margin-top: 14px;
-  padding: 12px;
-  background: #f5eee5;
-  border-radius: 12px;
-  display: inline-block;
-  box-sizing: border-box;
 }
 
 .image-preview {
   display: block;
-  max-width: 140px;
-  max-height: 140px;
-  border-radius: 8px;
-  border: 1px solid #d5c6b7;
+  max-width: 180px;
+  max-height: 180px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,.15);
   object-fit: contain;
-  background: #ffffff;
-  box-sizing: border-box;
 }
 
 .remove-image-button {
   margin-top: 8px;
-  padding: 4px 8px;
+  padding: 6px 10px;
   border: 0;
   background: transparent;
-  color: #a82424;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 600;
   text-decoration: underline;
-}
-
-.remove-image-button:hover {
-  color: #641f1f;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
 }
 
 /* =========================================
-   DESIGN PLACEMENT SELECT
+   DESIGN PLACEMENT
 ========================================= */
 
 .design-placement-section {
-  margin-top: 20px;
+  margin-top: 24px;
 }
 
 .design-placement-select {
   width: 100%;
-  min-height: 46px;
-  padding: 10px 14px;
-  border: 1px solid #d5c6b7;
-  border-radius: 10px;
-  background: #fcf8f4;
-  color: #211b18;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 6px;
+  background: transparent;
   font: inherit;
-  font-size: 13.5px;
-  font-weight: 500;
+  font-size: 14px;
   cursor: pointer;
   box-sizing: border-box;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .design-placement-select:focus {
   outline: none;
-  border-color: #641f1f;
-  box-shadow: 0 0 0 3px rgba(100, 31, 31, 0.12);
+  border-color: currentColor;
 }
 
 /* =========================================
-   LIVE PRODUCT PREVIEW CANVAS
+   LIVE PRODUCT PREVIEW (ORIGINAL THEME)
 ========================================= */
 
 .custom-product-preview {
-  margin-top: 24px;
-  padding: 20px;
-  border: 1.5px solid #d5c6b7;
-  border-radius: 16px;
-  background: #ffffff;
-  box-shadow: 0 10px 28px rgba(33, 27, 24, 0.06);
+  margin-top: 28px;
+  padding: 18px;
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 10px;
+  background: rgba(0,0,0,.02);
   box-sizing: border-box;
 }
 
 .preview-heading h4 {
-  margin: 0 0 4px;
-  font-size: 15px;
-  font-weight: 700;
-  color: #211b18;
+  margin: 0 0 5px;
+  font-size: 16px;
+  line-height: 1.4;
 }
 
 .preview-heading p {
-  margin: 0 0 16px;
+  margin: 0 0 18px;
   font-size: 12px;
-  color: #6f625a;
+  opacity: .7;
 }
 
 .preview-product-area {
   position: relative;
   width: 100%;
-  max-width: 440px;
+  max-width: 520px;
   margin: 0 auto;
-  border-radius: 14px;
   overflow: hidden;
-  background: #f9f6f2;
-  border: 1px solid #ebdcd0;
   box-sizing: border-box;
 }
 
-.preview-product-area img.preview-product-image {
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-  box-shadow: none !important;
-  box-sizing: border-box !important;
-  user-select: none !important;
-  pointer-events: none !important;
+.preview-product-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-/* Placement Target Indicator Bounding Box */
-.preview-target-indicator {
+.preview-design-image {
   position: absolute;
   display: none;
-  margin: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
-  border: 1.5px dashed rgba(100, 31, 31, 0.65);
-  background: rgba(100, 31, 31, 0.05);
-  border-radius: 6px;
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  z-index: 2;
-  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.preview-target-indicator.has-design {
-  border-color: rgba(100, 31, 31, 0.3);
-  background: transparent;
-}
-
-.preview-target-badge {
-  font-size: 9px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #641f1f;
-  background: rgba(255, 253, 249, 0.85);
-  padding: 2px 5px;
-  border-radius: 4px;
-  pointer-events: none;
-  white-space: nowrap;
-}
-
-.preview-target-indicator.has-design .preview-target-badge {
-  display: none;
-}
-
-/* Uploaded Design Layer */
-.preview-product-area img.preview-design-image {
-  position: absolute !important;
-  display: none;
   margin: 0 !important;
   padding: 0 !important;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
   box-sizing: border-box !important;
-  transform: translate(-50%, -50%) !important;
-  pointer-events: none !important;
-  user-select: none !important;
-  z-index: 3 !important;
-  object-fit: contain !important;
-  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.22));
-  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-/* =========================================================================
-   EXACT DESIGN PLACEMENT COORDINATES (CALIBRATED TO PRODUCT POLO SHIRT)
-   ========================================================================= */
-
-/* 1. CHEST / BREAST: Upper Chest / Wearer's Left (Viewer's Right) — matches "YOUR DESIGN HERE" */
-.preview-product-area.placement-chest .preview-target-indicator,
-.preview-product-area.placement-breast .preview-target-indicator {
-  display: flex;
-  left: 59.5% !important;
-  top: 28% !important;
-  width: 14% !important;
-  height: 11% !important;
-  transform: translate(-50%, -50%) !important;
-}
-
-.preview-product-area.placement-chest .preview-design-image,
-.preview-product-area.placement-breast .preview-design-image {
-  left: 59.5% !important;
-  top: 28% !important;
-  max-width: 14% !important;
-  max-height: 11% !important;
-  width: auto !important;
-  height: auto !important;
-  transform: translate(-50%, -50%) !important;
-}
-
-/* 2. CENTER: Full Front Chest Center */
-.preview-product-area.placement-center .preview-target-indicator {
-  display: flex;
-  left: 50% !important;
-  top: 44% !important;
-  width: 28% !important;
-  height: 24% !important;
-  transform: translate(-50%, -50%) !important;
-}
-
-.preview-product-area.placement-center .preview-design-image {
-  left: 50% !important;
-  top: 44% !important;
-  max-width: 26% !important;
-  max-height: 22% !important;
-  width: auto !important;
-  height: auto !important;
-  transform: translate(-50%, -50%) !important;
-}
-
-/* 3. RIGHT SLEEVE: Viewer's Right Sleeve */
-.preview-product-area.placement-right-sleeve .preview-target-indicator {
-  display: flex;
-  left: 74% !important;
-  top: 36% !important;
-  width: 15% !important;
-  height: 10% !important;
-  transform: translate(-50%, -50%) rotate(22deg) !important;
-}
-
-.preview-product-area.placement-right-sleeve .preview-design-image {
-  left: 74% !important;
-  top: 36% !important;
-  max-width: 14% !important;
-  max-height: 9% !important;
-  width: auto !important;
-  height: auto !important;
-  transform: translate(-50%, -50%) rotate(22deg) !important;
-}
-
-/* 4. LEFT SLEEVE: Viewer's Left Sleeve */
-.preview-product-area.placement-left-sleeve .preview-target-indicator {
-  display: flex;
-  left: 26% !important;
-  top: 36% !important;
-  width: 15% !important;
-  height: 10% !important;
-  transform: translate(-50%, -50%) rotate(-22deg) !important;
-}
-
-.preview-product-area.placement-left-sleeve .preview-design-image {
-  left: 26% !important;
-  top: 36% !important;
-  max-width: 14% !important;
-  max-height: 9% !important;
-  width: auto !important;
-  height: auto !important;
-  transform: translate(-50%, -50%) rotate(-22deg) !important;
 }
 
 /* =========================================
-   PREVIEW CAPTION & STATUS
-======================================== */
+   PLACEMENT POSITIONS (CALIBRATED ON GARMENT)
+========================================= */
+
+/* Chest — Top right chest / "YOUR DESIGN HERE" */
+.preview-product-area.placement-chest .preview-design-image {
+  display: block;
+  left: 58%;
+  top: 32%;
+  width: 75px;
+  height: 75px;
+}
+
+/* Breast — Left chest pocket area */
+.preview-product-area.placement-breast .preview-design-image {
+  display: block;
+  left: 58%;
+  top: 32%;
+  width: 70px;
+  height: 70px;
+}
+
+/* Center — Center front chest */
+.preview-product-area.placement-center .preview-design-image {
+  display: block;
+  left: 50%;
+  top: 48%;
+  width: 120px;
+  height: 120px;
+}
+
+/* Right Sleeve — Sits directly ON the right sleeve */
+.preview-product-area.placement-right-sleeve .preview-design-image {
+  display: block;
+  left: 67%;
+  top: 45%;
+  width: 60px;
+  height: 60px;
+}
+
+/* Left Sleeve — Sits directly ON the left sleeve */
+.preview-product-area.placement-left-sleeve .preview-design-image {
+  display: block;
+  left: 33%;
+  top: 45%;
+  width: 60px;
+  height: 60px;
+}
+
+/* =========================================
+   PREVIEW TEXT
+========================================= */
 
 .preview-placement-text {
   margin-top: 14px;
   text-align: center;
-  font-size: 13.5px;
-  color: #211b18;
-}
-
-.preview-placement-text strong {
-  color: #641f1f;
-  margin-left: 4px;
+  font-size: 13px;
 }
 
 .preview-disclaimer {
   margin: 10px 0 0;
-  font-size: 11.5px;
+  font-size: 11px;
   line-height: 1.5;
-  color: #8c7e75;
+  opacity: .6;
   text-align: center;
 }
 
@@ -575,30 +436,19 @@
 
 .upload-error,
 .customization-error {
-  margin-top: 10px;
-  padding: 8px 12px;
-  border-radius: 8px;
-  background: rgba(168, 36, 36, 0.08);
-  border: 1px solid rgba(168, 36, 36, 0.3);
+  margin-top: 8px;
   font-size: 13px;
   line-height: 1.4;
-  color: #a82424;
+  color: #c62828;
 }
 
 /* =========================================
-   MOBILE RESPONSIVENESS
+   MOBILE
 ========================================= */
 
 @media screen and (max-width: 749px) {
-  .customization-box {
-    margin: 16px 0;
-    padding: 16px;
-  }
   .custom-upload-button {
     width: 100%;
-  }
-  .custom-product-preview {
-    padding: 14px;
   }
 }
 </style>
@@ -620,9 +470,11 @@
     const productPreview = box.querySelector('.custom-product-preview');
     const previewArea = box.querySelector('.preview-product-area');
     const previewDesign = box.querySelector('.preview-design-image');
-    const previewIndicator = box.querySelector('.preview-target-indicator');
     const previewPlacementName = box.querySelector('.preview-placement-text strong');
 
+    /* =========================================
+       PRODUCT FORM
+    ========================================= */
     function getProductForm() {
       return document.querySelector('form[action*="/cart/add"]');
     }
@@ -639,6 +491,9 @@
       return input;
     }
 
+    /* =========================================
+       SETUP FORM
+    ========================================= */
     function setupForm() {
       const form = getProductForm();
       if (!form) return;
@@ -666,33 +521,29 @@
         imageInput.name = 'properties[Customization Image]';
       }
 
+      /* =========================================
+         IMAGE UPLOAD
+      ========================================= */
       if (imageInput && !imageInput.dataset.bound) {
         imageInput.dataset.bound = 'true';
         imageInput.addEventListener('change', function() {
           if (uploadError) uploadError.style.display = 'none';
           const file = imageInput.files[0];
+
           if (!file) {
             if (previewWrapper) previewWrapper.style.display = 'none';
-            if (previewDesign) {
-              previewDesign.src = '';
-              previewDesign.style.display = 'none';
-            }
-            if (previewIndicator) previewIndicator.classList.remove('has-design');
+            if (productPreview) productPreview.style.display = 'none';
             return;
           }
 
           if (!file.type.startsWith('image/')) {
             if (uploadError) {
-              uploadError.textContent = 'Please upload a valid image file (PNG, JPG, or WEBP).';
+              uploadError.textContent = 'Please upload an image file.';
               uploadError.style.display = 'block';
             }
             imageInput.value = '';
             if (previewWrapper) previewWrapper.style.display = 'none';
-            if (previewDesign) {
-              previewDesign.src = '';
-              previewDesign.style.display = 'none';
-            }
-            if (previewIndicator) previewIndicator.classList.remove('has-design');
+            if (productPreview) productPreview.style.display = 'none';
             return;
           }
 
@@ -703,11 +554,7 @@
             }
             imageInput.value = '';
             if (previewWrapper) previewWrapper.style.display = 'none';
-            if (previewDesign) {
-              previewDesign.src = '';
-              previewDesign.style.display = 'none';
-            }
-            if (previewIndicator) previewIndicator.classList.remove('has-design');
+            if (productPreview) productPreview.style.display = 'none';
             return;
           }
 
@@ -717,30 +564,33 @@
             if (previewImage) previewImage.src = imageURL;
             if (previewWrapper) previewWrapper.style.display = 'block';
 
-            if (previewDesign) {
-              previewDesign.src = imageURL;
-            }
+            if (previewDesign) previewDesign.src = imageURL;
+            if (productPreview) productPreview.style.display = 'block';
+
             updateProductPreview();
           };
           reader.readAsDataURL(file);
         });
       }
 
+      /* =========================================
+         REMOVE IMAGE
+      ========================================= */
       if (removeImageButton && !removeImageButton.dataset.bound) {
         removeImageButton.dataset.bound = 'true';
         removeImageButton.addEventListener('click', function() {
           if (imageInput) imageInput.value = '';
           if (previewImage) previewImage.src = '';
-          if (previewDesign) {
-            previewDesign.src = '';
-            previewDesign.style.display = 'none';
-          }
-          if (previewIndicator) previewIndicator.classList.remove('has-design');
+          if (previewDesign) previewDesign.src = '';
           if (previewWrapper) previewWrapper.style.display = 'none';
+          if (productPreview) productPreview.style.display = 'none';
           if (uploadError) uploadError.style.display = 'none';
         });
       }
 
+      /* =========================================
+         TEXT INPUT
+      ========================================= */
       if (textarea && !textarea.dataset.bound) {
         textarea.dataset.bound = 'true';
         textarea.addEventListener('input', function() {
@@ -751,6 +601,9 @@
         });
       }
 
+      /* =========================================
+         PLACEMENT CHANGE
+      ========================================= */
       if (placementSelect && !placementSelect.dataset.bound) {
         placementSelect.dataset.bound = 'true';
         placementSelect.addEventListener('change', function() {
@@ -759,6 +612,9 @@
         });
       }
 
+      /* =========================================
+         UPDATE LIVE PREVIEW
+      ========================================= */
       function updateProductPreview() {
         if (!previewArea || !placementSelect) return;
         const placement = placementSelect.value;
@@ -772,20 +628,17 @@
         );
 
         if (!placement) {
-          if (productPreview) productPreview.style.display = 'none';
           if (previewPlacementName) previewPlacementName.textContent = '—';
           if (previewDesign) previewDesign.style.display = 'none';
-          if (previewIndicator) previewIndicator.classList.remove('has-design');
           return;
         }
 
-        if (productPreview) productPreview.style.display = 'block';
         previewArea.classList.add('placement-' + placement);
 
         const placementNames = {
-          'chest': 'Chest (Top Right — As shown on shirt)',
-          'breast': 'Left Chest / Breast',
-          'center': 'Center Front',
+          'chest': 'Chest',
+          'breast': 'Breast',
+          'center': 'Center',
           'right-sleeve': 'Right Sleeve',
           'left-sleeve': 'Left Sleeve'
         };
@@ -796,13 +649,12 @@
 
         if (previewDesign && previewDesign.getAttribute('src')) {
           previewDesign.style.display = 'block';
-          if (previewIndicator) previewIndicator.classList.add('has-design');
-        } else {
-          if (previewDesign) previewDesign.style.display = 'none';
-          if (previewIndicator) previewIndicator.classList.remove('has-design');
         }
       }
 
+      /* =========================================
+         VALIDATE ADD TO CART
+      ========================================= */
       if (form && !form.dataset.boundCustomizer) {
         form.dataset.boundCustomizer = 'true';
         form.addEventListener('submit', function(event) {
