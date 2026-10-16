@@ -41,6 +41,48 @@
 {% endcapture %}
 
 <section {% render 'section-attr' %}>
+  <style>
+    .testimonial-v18__img {
+      display: none !important;
+      border: none !important;
+      width: 0 !important;
+      height: 0 !important;
+      overflow: hidden !important;
+    }
+    .testimonial-v18__customer {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 4px !important;
+      padding-top: 16px !important;
+      border-top: 1px solid rgba(213, 198, 183, 0.55) !important;
+    }
+    .testimonial-v18__name {
+      font-size: 14.5px !important;
+      font-weight: 700 !important;
+      color: #211b18 !important;
+      letter-spacing: 0.02em !important;
+      text-transform: uppercase !important;
+      line-height: 1.3 !important;
+    }
+    .testimonial-v18__position {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      font-size: 12.5px !important;
+      color: #641f1f !important;
+      font-weight: 600 !important;
+      line-height: 1.3 !important;
+    }
+    .testimonial-v18__testimonial {
+      font-size: 15.5px !important;
+      line-height: 1.7 !important;
+      color: #211b18 !important;
+      margin: 16px 0 24px !important;
+      display: block !important;
+      -webkit-line-clamp: unset !important;
+    }
+  </style>
   {% render 'section-bg-image' %}
   <xo-container {% render 'section-layout' %}>
     {% if section.settings.title %}

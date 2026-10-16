@@ -26,7 +26,7 @@
         "customers_list": "Someone In Glasgow, just bought/\nSomeone In Swansea, just bought/\nSomeone In Bangor, just bought/\nSomeone In Birmingham, just bought/\nSomeone In Belfast, just bought/",
         "position": "bottom-left",
         "duration": 4,
-        "delay": 8,
+        "delay": 60,
         "where_to_show": "all_pages",
         "target_pages": "",
         "content": "Verify"

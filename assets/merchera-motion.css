@@ -880,9 +880,7 @@ xo-carousel-slide[xo-active] picture img {
 }
 
 .testimonial-v18__img {
-  border: 2px solid var(--mc-burgundy);
-  border-radius: 50%;
-  overflow: hidden;
+  display: none !important;
 }
 
 .testimonial-v18__name {
